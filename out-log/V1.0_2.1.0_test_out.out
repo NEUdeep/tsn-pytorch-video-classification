@@ -1,0 +1,1966 @@
+
+Initializing TSN with base model: resnet50.
+TSN Configurations:
+    input_modality:     RGB
+    num_segments:       1
+    new_length:         1
+    consensus_module:   avg
+    dropout_ratio:      0.7
+    use_partial_bn:     False
+    use_group_norm:     False
+        
+/workspace/mnt/group/algorithm/kanghaidong/video_project/Alg-VideoAlgorithm-dev/video-classification/tsn-pytorch/models.py:97: UserWarning: nn.init.normal is now deprecated in favor of nn.init.normal_.
+  normal(self.new_fc.weight, 0, std)
+/workspace/mnt/group/algorithm/kanghaidong/video_project/Alg-VideoAlgorithm-dev/video-classification/tsn-pytorch/models.py:98: UserWarning: nn.init.constant is now deprecated in favor of nn.init.constant_.
+  constant(self.new_fc.bias, 0)
+model epoch 195 best prec@1: 88.94681953215375
+/usr/local/lib/python3.5/dist-packages/torchvision/transforms/transforms.py:208: UserWarning: The use of the transforms.Scale transform is deprecated, please use transforms.Resize instead.
+  "please use transforms.Resize instead.")
+the length of list_file 104
+the length of video_list 959
+test_models.py:138: UserWarning: volatile was removed and now has no effect. Use `with torch.no_grad():` instead.
+  volatile=True)
+video #0, pred:5, label:5
+video 0 done, total 1/959, average 19.171175956726074 sec/video
+video #1, pred:5, label:5
+video 1 done, total 2/959, average 9.636906385421753 sec/video
+video #2, pred:2, label:2
+video 2 done, total 3/959, average 6.458067337671916 sec/video
+video #3, pred:5, label:5
+video 3 done, total 4/959, average 4.868758857250214 sec/video
+video #4, pred:5, label:5
+video 4 done, total 5/959, average 3.915885829925537 sec/video
+video #5, pred:5, label:5
+video 5 done, total 6/959, average 3.2960060437520347 sec/video
+video #6, pred:5, label:5
+video 6 done, total 7/959, average 2.8405961649758473 sec/video
+video #7, pred:2, label:2
+video 7 done, total 8/959, average 2.49817031621933 sec/video
+video #8, pred:4, label:4
+video 8 done, total 9/959, average 2.231957753499349 sec/video
+video #9, pred:5, label:5
+video 9 done, total 10/959, average 2.111364984512329 sec/video
+video #10, pred:2, label:2
+video 10 done, total 11/959, average 1.9311581741679797 sec/video
+video #11, pred:5, label:5
+video 11 done, total 12/959, average 1.7995697061220806 sec/video
+video #12, pred:2, label:2
+video 12 done, total 13/959, average 1.669110628274771 sec/video
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x3a41b00] moov atom not found
+VIDIOC_REQBUFS: Inappropriate ioctl for device
+video #13, pred:1, label:1
+video 13 done, total 14/959, average 1.6120832647596086 sec/video
+video #14, pred:5, label:5
+video 14 done, total 15/959, average 1.5364164193471272 sec/video
+video #15, pred:5, label:5
+video 15 done, total 16/959, average 1.448864907026291 sec/video
+video #16, pred:2, label:0
+video 16 done, total 17/959, average 1.3840475643382353 sec/video
+video #17, pred:2, label:2
+video 17 done, total 18/959, average 1.35751387808058 sec/video
+video #18, pred:5, label:5
+video 18 done, total 19/959, average 1.3044707022215192 sec/video
+video #19, pred:2, label:2
+video 19 done, total 20/959, average 1.254034960269928 sec/video
+video #20, pred:5, label:5
+video 20 done, total 21/959, average 1.2035032113393147 sec/video
+video #21, pred:5, label:3
+video 21 done, total 22/959, average 1.190564664927396 sec/video
+video #22, pred:5, label:5
+video 22 done, total 23/959, average 1.151505656864332 sec/video
+video #23, pred:5, label:3
+video 23 done, total 24/959, average 1.1126307944456737 sec/video
+video #24, pred:0, label:0
+video 24 done, total 25/959, average 1.0888667583465577 sec/video
+video #25, pred:5, label:5
+video 25 done, total 26/959, average 1.0727744927773109 sec/video
+video #26, pred:2, label:0
+video 26 done, total 27/959, average 1.0442049326720062 sec/video
+video #27, pred:5, label:5
+video 27 done, total 28/959, average 1.0140044774327959 sec/video
+video #28, pred:5, label:2
+video 28 done, total 29/959, average 0.991244677839608 sec/video
+video #29, pred:2, label:2
+video 29 done, total 30/959, average 0.9838490009307861 sec/video
+video #30, pred:2, label:5
+video 30 done, total 31/959, average 0.9604208469390869 sec/video
+video #31, pred:0, label:0
+video 31 done, total 32/959, average 0.9428369179368019 sec/video
+video #32, pred:5, label:5
+video 32 done, total 33/959, average 0.9223060535662102 sec/video
+video #33, pred:2, label:2
+video 33 done, total 34/959, average 0.9241539870991426 sec/video
+video #34, pred:5, label:5
+video 34 done, total 35/959, average 0.9000911372048515 sec/video
+video #35, pred:0, label:0
+video 35 done, total 36/959, average 0.8853894140985277 sec/video
+video #36, pred:0, label:2
+video 36 done, total 37/959, average 0.8662434719704293 sec/video
+video #37, pred:5, label:2
+video 37 done, total 38/959, average 0.8637343645095825 sec/video
+video #38, pred:5, label:5
+video 38 done, total 39/959, average 0.8458112325423803 sec/video
+video #39, pred:0, label:0
+video 39 done, total 40/959, average 0.8346473395824432 sec/video
+video #40, pred:2, label:2
+video 40 done, total 41/959, average 0.8215974772848734 sec/video
+video #41, pred:5, label:5
+video 41 done, total 42/959, average 0.8250693536940075 sec/video
+video #42, pred:5, label:5
+video 42 done, total 43/959, average 0.8077222691025845 sec/video
+video #43, pred:0, label:0
+video 43 done, total 44/959, average 0.79786155982451 sec/video
+video #44, pred:2, label:2
+video 44 done, total 45/959, average 0.7853889306386311 sec/video
+video #45, pred:0, label:0
+video 45 done, total 46/959, average 0.7922777818596881 sec/video
+video #46, pred:4, label:4
+video 46 done, total 47/959, average 0.7773778590750187 sec/video
+video #47, pred:5, label:5
+video 47 done, total 48/959, average 0.7629242539405823 sec/video
+video #48, pred:5, label:5
+video 48 done, total 49/959, average 0.7560115444416903 sec/video
+video #49, pred:0, label:0
+video 49 done, total 50/959, average 0.7608387279510498 sec/video
+video #50, pred:5, label:5
+video 50 done, total 51/959, average 0.7476358834434959 sec/video
+video #51, pred:4, label:5
+video 51 done, total 52/959, average 0.7363160665218647 sec/video
+video #52, pred:3, label:5
+video 52 done, total 53/959, average 0.7303664639311017 sec/video
+video #53, pred:5, label:5
+video 53 done, total 54/959, average 0.7356474973537304 sec/video
+video #54, pred:5, label:5
+video 54 done, total 55/959, average 0.7475109230388295 sec/video
+video #55, pred:4, label:4
+video 55 done, total 56/959, average 0.7356028812272208 sec/video
+video #56, pred:5, label:5
+video 56 done, total 57/959, average 0.7242991129557291 sec/video
+video #57, pred:2, label:0
+video 57 done, total 58/959, average 0.7185729947583429 sec/video
+video #58, pred:5, label:5
+video 58 done, total 59/959, average 0.7267123440564689 sec/video
+video #59, pred:4, label:4
+video 59 done, total 60/959, average 0.7161831339200337 sec/video
+video #60, pred:4, label:4
+video 60 done, total 61/959, average 0.7060386079256652 sec/video
+video #61, pred:5, label:5
+video 61 done, total 62/959, average 0.7000205016905262 sec/video
+video #62, pred:5, label:0
+video 62 done, total 63/959, average 0.7134648769620865 sec/video
+video #63, pred:5, label:5
+video 63 done, total 64/959, average 0.7035583145916462 sec/video
+video #64, pred:2, label:2
+video 64 done, total 65/959, average 0.6941723823547363 sec/video
+video #65, pred:2, label:2
+video 65 done, total 66/959, average 0.6849278464461818 sec/video
+video #66, pred:4, label:4
+video 66 done, total 67/959, average 0.7012876966106358 sec/video
+video #67, pred:5, label:5
+video 67 done, total 68/959, average 0.6924533388193916 sec/video
+video #68, pred:0, label:0
+video 68 done, total 69/959, average 0.6837109033612238 sec/video
+video #69, pred:5, label:5
+video 69 done, total 70/959, average 0.6914838041578021 sec/video
+video #70, pred:5, label:5
+video 70 done, total 71/959, average 0.6887346757969386 sec/video
+video #71, pred:5, label:5
+video 71 done, total 72/959, average 0.6808379590511322 sec/video
+video #72, pred:1, label:1
+video 72 done, total 73/959, average 0.6727271635238439 sec/video
+video #73, pred:0, label:0
+video 73 done, total 74/959, average 0.6815798314842018 sec/video
+video #74, pred:2, label:2
+video 74 done, total 75/959, average 0.6743464247385661 sec/video
+video #75, pred:5, label:5
+video 75 done, total 76/959, average 0.6668059794526351 sec/video
+video #76, pred:2, label:0
+video 76 done, total 77/959, average 0.6593528382189862 sec/video
+video #77, pred:5, label:5
+video 77 done, total 78/959, average 0.6708254233384744 sec/video
+video #78, pred:5, label:5
+video 78 done, total 79/959, average 0.6641831850703759 sec/video
+video #79, pred:5, label:5
+video 79 done, total 80/959, average 0.657057809829712 sec/video
+video #80, pred:2, label:2
+video 80 done, total 81/959, average 0.6499828791912691 sec/video
+video #81, pred:2, label:2
+video 81 done, total 82/959, average 0.6593590393299009 sec/video
+video #82, pred:5, label:5
+video 82 done, total 83/959, average 0.6532870775245758 sec/video
+video #83, pred:5, label:5
+video 83 done, total 84/959, average 0.6465106805165609 sec/video
+video #84, pred:5, label:5
+video 84 done, total 85/959, average 0.6398836135864258 sec/video
+video #85, pred:4, label:4
+video 85 done, total 86/959, average 0.6488776345585667 sec/video
+video #86, pred:3, label:3
+video 86 done, total 87/959, average 0.6434050921736092 sec/video
+video #87, pred:5, label:5
+video 87 done, total 88/959, average 0.6375658891417764 sec/video
+video #88, pred:2, label:2
+video 88 done, total 89/959, average 0.6313157697741905 sec/video
+video #89, pred:5, label:5
+video 89 done, total 90/959, average 0.6402374903361002 sec/video
+video #90, pred:5, label:5
+video 90 done, total 91/959, average 0.6349876267569405 sec/video
+video #91, pred:5, label:5
+video 91 done, total 92/959, average 0.6295368541841921 sec/video
+video #92, pred:5, label:5
+video 92 done, total 93/959, average 0.6238629612871396 sec/video
+video #93, pred:5, label:5
+video 93 done, total 94/959, average 0.6307538215150225 sec/video
+video #94, pred:5, label:5
+video 94 done, total 95/959, average 0.6251447200775146 sec/video
+video #95, pred:0, label:0
+video 95 done, total 96/959, average 0.6195975318551064 sec/video
+video #96, pred:2, label:2
+video 96 done, total 97/959, average 0.6141823173798237 sec/video
+video #97, pred:5, label:5
+video 97 done, total 98/959, average 0.6216126437089882 sec/video
+video #98, pred:2, label:2
+video 98 done, total 99/959, average 0.6182202859358354 sec/video
+video #99, pred:2, label:2
+video 99 done, total 100/959, average 0.6128548383712769 sec/video
+video #100, pred:2, label:2
+video 100 done, total 101/959, average 0.6077131516862624 sec/video
+video #101, pred:5, label:5
+video 101 done, total 102/959, average 0.6138884273229861 sec/video
+video #102, pred:5, label:5
+video 102 done, total 103/959, average 0.6098738874046548 sec/video
+video #103, pred:0, label:0
+video 103 done, total 104/959, average 0.6047873909656818 sec/video
+video #104, pred:5, label:5
+video 104 done, total 105/959, average 0.6001625583285377 sec/video
+video #105, pred:5, label:5
+video 105 done, total 106/959, average 0.6079638454149354 sec/video
+video #106, pred:0, label:0
+video 106 done, total 107/959, average 0.6076844629840316 sec/video
+video #107, pred:5, label:5
+video 107 done, total 108/959, average 0.6027981793438947 sec/video
+video #108, pred:2, label:2
+video 108 done, total 109/959, average 0.598240688306476 sec/video
+video #109, pred:5, label:5
+video 109 done, total 110/959, average 0.6035953760147095 sec/video
+video #110, pred:5, label:5
+video 110 done, total 111/959, average 0.6165436946593963 sec/video
+video #111, pred:5, label:5
+video 111 done, total 112/959, average 0.6117895053965705 sec/video
+video #112, pred:5, label:5
+video 112 done, total 113/959, average 0.6071188513156587 sec/video
+video #113, pred:5, label:5
+video 113 done, total 114/959, average 0.6025677396540057 sec/video
+video #114, pred:4, label:5
+video 114 done, total 115/959, average 0.6079154180443805 sec/video
+video #115, pred:3, label:5
+video 115 done, total 116/959, average 0.6033911807783718 sec/video
+video #116, pred:2, label:2
+video 116 done, total 117/959, average 0.5990881960616152 sec/video
+video #117, pred:0, label:0
+video 117 done, total 118/959, average 0.5946994959297827 sec/video
+video #118, pred:5, label:5
+video 118 done, total 119/959, average 0.6012622628893171 sec/video
+video #119, pred:3, label:3
+video 119 done, total 120/959, average 0.5970619400342305 sec/video
+video #120, pred:2, label:2
+video 120 done, total 121/959, average 0.5931861065635996 sec/video
+video #121, pred:2, label:2
+video 121 done, total 122/959, average 0.5893218536845973 sec/video
+video #122, pred:5, label:5
+video 122 done, total 123/959, average 0.595345983660318 sec/video
+video #123, pred:5, label:5
+video 123 done, total 124/959, average 0.5912535921219857 sec/video
+video #124, pred:2, label:2
+video 124 done, total 125/959, average 0.5871902732849121 sec/video
+video #125, pred:5, label:5
+video 125 done, total 126/959, average 0.5832455460987394 sec/video
+video #126, pred:3, label:3
+video 126 done, total 127/959, average 0.5896354829232524 sec/video
+video #127, pred:2, label:2
+video 127 done, total 128/959, average 0.5858169924467802 sec/video
+video #128, pred:0, label:0
+video 128 done, total 129/959, average 0.5821325520212336 sec/video
+video #129, pred:5, label:5
+video 129 done, total 130/959, average 0.5784975913854745 sec/video
+video #130, pred:3, label:3
+video 130 done, total 131/959, average 0.5865506215859916 sec/video
+video #131, pred:5, label:5
+video 131 done, total 132/959, average 0.5827116225705002 sec/video
+video #132, pred:5, label:5
+video 132 done, total 133/959, average 0.579079536567057 sec/video
+video #133, pred:5, label:5
+video 133 done, total 134/959, average 0.5878428452050508 sec/video
+video #134, pred:5, label:5
+video 134 done, total 135/959, average 0.5941060260490135 sec/video
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x3943a00] moov atom not found
+VIDIOC_REQBUFS: Inappropriate ioctl for device
+video #135, pred:5, label:5
+video 135 done, total 136/959, average 0.5903968425358043 sec/video
+video #136, pred:5, label:5
+video 136 done, total 137/959, average 0.5867950411608619 sec/video
+video #137, pred:5, label:5
+video 137 done, total 138/959, average 0.5835571219955665 sec/video
+video #138, pred:4, label:4
+video 138 done, total 139/959, average 0.5883120478485986 sec/video
+video #139, pred:2, label:5
+video 139 done, total 140/959, average 0.5848048107964652 sec/video
+video #140, pred:5, label:5
+video 140 done, total 141/959, average 0.581323320983995 sec/video
+video #141, pred:5, label:5
+video 141 done, total 142/959, average 0.5810090874282408 sec/video
+video #142, pred:0, label:0
+video 142 done, total 143/959, average 0.5847087756737129 sec/video
+video #143, pred:2, label:2
+video 143 done, total 144/959, average 0.58122961057557 sec/video
+video #144, pred:5, label:5
+video 144 done, total 145/959, average 0.5778684188579691 sec/video
+video #145, pred:2, label:2
+video 145 done, total 146/959, average 0.577309933427262 sec/video
+video #146, pred:5, label:5
+video 146 done, total 147/959, average 0.5802640833822238 sec/video
+video #147, pred:5, label:5
+video 147 done, total 148/959, average 0.5769673956407083 sec/video
+video #148, pred:2, label:2
+video 148 done, total 149/959, average 0.5737242202630779 sec/video
+video #149, pred:4, label:4
+video 149 done, total 150/959, average 0.572704758644104 sec/video
+video #150, pred:5, label:5
+video 150 done, total 151/959, average 0.581023301509832 sec/video
+video #151, pred:2, label:3
+video 151 done, total 152/959, average 0.5777226231600109 sec/video
+video #152, pred:5, label:5
+video 152 done, total 153/959, average 0.574479341506958 sec/video
+video #153, pred:2, label:2
+video 153 done, total 154/959, average 0.5726718608435099 sec/video
+video #154, pred:4, label:4
+video 154 done, total 155/959, average 0.5768057992381435 sec/video
+video #155, pred:5, label:5
+video 155 done, total 156/959, average 0.5736417097923083 sec/video
+video #156, pred:5, label:5
+video 156 done, total 157/959, average 0.5705820481488659 sec/video
+video #157, pred:3, label:3
+video 157 done, total 158/959, average 0.570177375515805 sec/video
+video #158, pred:5, label:5
+video 158 done, total 159/959, average 0.5709907543734185 sec/video
+video #159, pred:4, label:4
+video 159 done, total 160/959, average 0.5682455882430076 sec/video
+video #160, pred:5, label:3
+video 160 done, total 161/959, average 0.5652576588695835 sec/video
+video #161, pred:5, label:5
+video 161 done, total 162/959, average 0.566990347556126 sec/video
+video #162, pred:5, label:5
+video 162 done, total 163/959, average 0.567247967047194 sec/video
+video #163, pred:5, label:5
+video 163 done, total 164/959, average 0.5646617994075869 sec/video
+video #164, pred:4, label:4
+video 164 done, total 165/959, average 0.5617969353993734 sec/video
+video #165, pred:5, label:5
+video 165 done, total 166/959, average 0.5641722937664354 sec/video
+video #166, pred:5, label:5
+video 166 done, total 167/959, average 0.5742355135386575 sec/video
+video #167, pred:0, label:0
+video 167 done, total 168/959, average 0.5713721641472408 sec/video
+video #168, pred:5, label:5
+video 168 done, total 169/959, average 0.5685524630123342 sec/video
+video #169, pred:5, label:5
+video 169 done, total 170/959, average 0.5658018967684577 sec/video
+video #170, pred:5, label:5
+video 170 done, total 171/959, average 0.5703904740294518 sec/video
+video #171, pred:2, label:2
+video 171 done, total 172/959, average 0.5676436036132103 sec/video
+video #172, pred:4, label:4
+video 172 done, total 173/959, average 0.5648619274183505 sec/video
+video #173, pred:1, label:1
+video 173 done, total 174/959, average 0.5620928536886456 sec/video
+video #174, pred:5, label:5
+video 174 done, total 175/959, average 0.5664578206198556 sec/video
+video #175, pred:5, label:5
+video 175 done, total 176/959, average 0.5637203387238763 sec/video
+video #176, pred:3, label:3
+video 176 done, total 177/959, average 0.5609941778883423 sec/video
+video #177, pred:4, label:4
+video 177 done, total 178/959, average 0.5584867723872152 sec/video
+video #178, pred:1, label:1
+video 178 done, total 179/959, average 0.5633038462207304 sec/video
+video #179, pred:4, label:4
+video 179 done, total 180/959, average 0.5606539342138502 sec/video
+video #180, pred:2, label:3
+video 180 done, total 181/959, average 0.5580222988655554 sec/video
+video #181, pred:5, label:5
+video 181 done, total 182/959, average 0.5554065442347265 sec/video
+video #182, pred:2, label:2
+video 182 done, total 183/959, average 0.5605836357575297 sec/video
+video #183, pred:5, label:5
+video 183 done, total 184/959, average 0.5580399891604548 sec/video
+video #184, pred:5, label:3
+video 184 done, total 185/959, average 0.5555587162842621 sec/video
+video #185, pred:5, label:5
+video 185 done, total 186/959, average 0.5532454636789137 sec/video
+video #186, pred:5, label:5
+video 186 done, total 187/959, average 0.558137972724629 sec/video
+video #187, pred:5, label:5
+video 187 done, total 188/959, average 0.555635818775664 sec/video
+video #188, pred:5, label:5
+video 188 done, total 189/959, average 0.5531148405932875 sec/video
+video #189, pred:5, label:5
+video 189 done, total 190/959, average 0.5506215923710873 sec/video
+video #190, pred:1, label:1
+video 190 done, total 191/959, average 0.5550224781036377 sec/video
+video #191, pred:2, label:2
+video 191 done, total 192/959, average 0.552604486544927 sec/video
+video #192, pred:2, label:5
+video 192 done, total 193/959, average 0.5501885574716361 sec/video
+video #193, pred:5, label:5
+video 193 done, total 194/959, average 0.5478029693524862 sec/video
+video #194, pred:3, label:3
+video 194 done, total 195/959, average 0.5529247565147204 sec/video
+video #195, pred:4, label:4
+video 195 done, total 196/959, average 0.5505177974700928 sec/video
+video #196, pred:5, label:5
+video 196 done, total 197/959, average 0.548166830527601 sec/video
+video #197, pred:5, label:5
+video 197 done, total 198/959, average 0.5458708435598046 sec/video
+video #198, pred:5, label:5
+video 198 done, total 199/959, average 0.5527296773153334 sec/video
+video #199, pred:5, label:4
+video 199 done, total 200/959, average 0.5504439520835877 sec/video
+video #200, pred:2, label:2
+video 200 done, total 201/959, average 0.5481578639490687 sec/video
+video #201, pred:0, label:0
+video 201 done, total 202/959, average 0.5459720144177428 sec/video
+video #202, pred:5, label:5
+video 202 done, total 203/959, average 0.55082181639272 sec/video
+video #203, pred:5, label:5
+video 203 done, total 204/959, average 0.5495938506780886 sec/video
+video #204, pred:2, label:2
+video 204 done, total 205/959, average 0.5473053013406148 sec/video
+video #205, pred:5, label:5
+video 205 done, total 206/959, average 0.5450344328741425 sec/video
+video #206, pred:5, label:5
+video 206 done, total 207/959, average 0.5481854371978465 sec/video
+video #207, pred:5, label:5
+video 207 done, total 208/959, average 0.5462962446304468 sec/video
+video #208, pred:3, label:3
+video 208 done, total 209/959, average 0.5440665922666851 sec/video
+video #209, pred:5, label:5
+video 209 done, total 210/959, average 0.5418686889466785 sec/video
+video #210, pred:5, label:5
+video 210 done, total 211/959, average 0.5453199978688317 sec/video
+video #211, pred:5, label:5
+video 211 done, total 212/959, average 0.5432748254740013 sec/video
+video #212, pred:5, label:5
+video 212 done, total 213/959, average 0.5411577370245132 sec/video
+video #213, pred:2, label:2
+video 213 done, total 214/959, average 0.5390000577284911 sec/video
+video #214, pred:5, label:5
+video 214 done, total 215/959, average 0.5434071795884953 sec/video
+video #215, pred:2, label:2
+video 215 done, total 216/959, average 0.5412643242765356 sec/video
+video #216, pred:4, label:4
+video 216 done, total 217/959, average 0.5391964363062987 sec/video
+video #217, pred:5, label:5
+video 217 done, total 218/959, average 0.537141568070158 sec/video
+video #218, pred:5, label:5
+video 218 done, total 219/959, average 0.5407762962933544 sec/video
+video #219, pred:5, label:5
+video 219 done, total 220/959, average 0.5390249469063498 sec/video
+video #220, pred:4, label:4
+video 220 done, total 221/959, average 0.5369978285483106 sec/video
+video #221, pred:5, label:5
+video 221 done, total 222/959, average 0.5349719803612512 sec/video
+video #222, pred:5, label:5
+video 222 done, total 223/959, average 0.5381857664595805 sec/video
+video #223, pred:5, label:5
+video 223 done, total 224/959, average 0.5363300751362529 sec/video
+video #224, pred:4, label:4
+video 224 done, total 225/959, average 0.5343048095703125 sec/video
+video #225, pred:5, label:5
+video 225 done, total 226/959, average 0.5323970971909244 sec/video
+video #226, pred:2, label:2
+video 226 done, total 227/959, average 0.5364767727872873 sec/video
+video #227, pred:2, label:2
+video 227 done, total 228/959, average 0.5345521590165925 sec/video
+video #228, pred:5, label:5
+video 228 done, total 229/959, average 0.5326563812239201 sec/video
+video #229, pred:3, label:3
+video 229 done, total 230/959, average 0.5307674096978229 sec/video
+video #230, pred:3, label:3
+video 230 done, total 231/959, average 0.5351639547389307 sec/video
+video #231, pred:0, label:2
+video 231 done, total 232/959, average 0.5332226013315136 sec/video
+video #232, pred:5, label:5
+video 232 done, total 233/959, average 0.5313149787837343 sec/video
+video #233, pred:2, label:2
+video 233 done, total 234/959, average 0.5294056040608984 sec/video
+video #234, pred:2, label:3
+video 234 done, total 235/959, average 0.5329773973911367 sec/video
+video #235, pred:5, label:5
+video 235 done, total 236/959, average 0.5310930246013706 sec/video
+video #236, pred:5, label:5
+video 236 done, total 237/959, average 0.5293111660309482 sec/video
+video #237, pred:5, label:5
+video 237 done, total 238/959, average 0.5274270141825956 sec/video
+video #238, pred:5, label:5
+video 238 done, total 239/959, average 0.5310917958056078 sec/video
+video #239, pred:5, label:5
+video 239 done, total 240/959, average 0.5292111237843832 sec/video
+video #240, pred:2, label:2
+video 240 done, total 241/959, average 0.5273439142219258 sec/video
+video #241, pred:5, label:5
+video 241 done, total 242/959, average 0.5255428582183586 sec/video
+video #242, pred:0, label:0
+video 242 done, total 243/959, average 0.5289419374348204 sec/video
+video #243, pred:2, label:2
+video 243 done, total 244/959, average 0.5270999015354719 sec/video
+video #244, pred:4, label:4
+video 244 done, total 245/959, average 0.5252775863725312 sec/video
+video #245, pred:5, label:5
+video 245 done, total 246/959, average 0.5235310899532908 sec/video
+video #246, pred:3, label:3
+video 246 done, total 247/959, average 0.5275542253424764 sec/video
+video #247, pred:5, label:5
+video 247 done, total 248/959, average 0.5257514695967397 sec/video
+video #248, pred:5, label:5
+video 248 done, total 249/959, average 0.5239917207434475 sec/video
+video #249, pred:5, label:5
+video 249 done, total 250/959, average 0.5222710590362549 sec/video
+video #250, pred:5, label:5
+video 250 done, total 251/959, average 0.5245086861796588 sec/video
+video #251, pred:5, label:5
+video 251 done, total 252/959, average 0.522820306202722 sec/video
+video #252, pred:4, label:4
+video 252 done, total 253/959, average 0.521703637164572 sec/video
+video #253, pred:5, label:5
+video 253 done, total 254/959, average 0.5200212809044545 sec/video
+video #254, pred:5, label:5
+video 254 done, total 255/959, average 0.5242013220693551 sec/video
+video #255, pred:5, label:5
+video 255 done, total 256/959, average 0.5225074188783765 sec/video
+video #256, pred:5, label:5
+video 256 done, total 257/959, average 0.5207851378370352 sec/video
+video #257, pred:5, label:5
+video 257 done, total 258/959, average 0.5190771199011988 sec/video
+video #258, pred:5, label:5
+video 258 done, total 259/959, average 0.5223579802568354 sec/video
+video #259, pred:2, label:0
+video 259 done, total 260/959, average 0.5207294610830454 sec/video
+video #260, pred:5, label:0
+video 260 done, total 261/959, average 0.5190904268359773 sec/video
+video #261, pred:5, label:5
+video 261 done, total 262/959, average 0.5174725674490892 sec/video
+video #262, pred:5, label:5
+video 262 done, total 263/959, average 0.5205667979816974 sec/video
+video #263, pred:5, label:5
+video 263 done, total 264/959, average 0.5189662286729524 sec/video
+video #264, pred:5, label:5
+video 264 done, total 265/959, average 0.5173510128597043 sec/video
+video #265, pred:3, label:3
+video 265 done, total 266/959, average 0.5157319154954494 sec/video
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x38d2e00] moov atom not found
+VIDIOC_REQBUFS: Inappropriate ioctl for device
+video #266, pred:5, label:5
+video 266 done, total 267/959, average 0.5190965557812751 sec/video
+video #267, pred:2, label:2
+video 267 done, total 268/959, average 0.5175039234446056 sec/video
+video #268, pred:5, label:5
+video 268 done, total 269/959, average 0.5159204848193768 sec/video
+video #269, pred:5, label:5
+video 269 done, total 270/959, average 0.5144314995518438 sec/video
+video #270, pred:5, label:5
+video 270 done, total 271/959, average 0.5168271803767919 sec/video
+video #271, pred:5, label:1
+video 271 done, total 272/959, average 0.5153791133095237 sec/video
+video #272, pred:4, label:4
+video 272 done, total 273/959, average 0.513849757093213 sec/video
+video #273, pred:5, label:3
+video 273 done, total 274/959, average 0.5123431621676814 sec/video
+video #274, pred:2, label:2
+video 274 done, total 275/959, average 0.5153702103007923 sec/video
+video #275, pred:2, label:2
+video 275 done, total 276/959, average 0.5139223579047383 sec/video
+video #276, pred:0, label:0
+video 276 done, total 277/959, average 0.5128707403740728 sec/video
+video #277, pred:5, label:5
+video 277 done, total 278/959, average 0.5113554189531065 sec/video
+video #278, pred:4, label:4
+video 278 done, total 279/959, average 0.5153776138059555 sec/video
+video #279, pred:5, label:3
+video 279 done, total 280/959, average 0.5138680492128644 sec/video
+video #280, pred:4, label:4
+video 280 done, total 281/959, average 0.5123671747187278 sec/video
+video #281, pred:5, label:5
+video 281 done, total 282/959, average 0.5108810950678291 sec/video
+video #282, pred:5, label:5
+video 282 done, total 283/959, average 0.5134288396936424 sec/video
+video #283, pred:5, label:2
+video 283 done, total 284/959, average 0.5121478581092727 sec/video
+video #284, pred:5, label:5
+video 284 done, total 285/959, average 0.5106984732443827 sec/video
+video #285, pred:4, label:4
+video 285 done, total 286/959, average 0.5093269739951287 sec/video
+video #286, pred:5, label:3
+video 286 done, total 287/959, average 0.5124907236066014 sec/video
+video #287, pred:5, label:5
+video 287 done, total 288/959, average 0.5117659908201959 sec/video
+video #288, pred:5, label:5
+video 288 done, total 289/959, average 0.5102775765125315 sec/video
+video #289, pred:5, label:5
+video 289 done, total 290/959, average 0.5136233140682352 sec/video
+video #290, pred:5, label:5
+video 290 done, total 291/959, average 0.5128276626678676 sec/video
+video #291, pred:5, label:5
+video 291 done, total 292/959, average 0.5161933253889215 sec/video
+video #292, pred:5, label:5
+video 292 done, total 293/959, average 0.5147990334156023 sec/video
+video #293, pred:5, label:5
+video 293 done, total 294/959, average 0.5133261599508273 sec/video
+video #294, pred:5, label:5
+video 294 done, total 295/959, average 0.5118881403389623 sec/video
+video #295, pred:5, label:5
+video 295 done, total 296/959, average 0.5153202495059451 sec/video
+video #296, pred:5, label:5
+video 296 done, total 297/959, average 0.5138924828282109 sec/video
+video #297, pred:5, label:5
+video 297 done, total 298/959, average 0.5124341401477788 sec/video
+video #298, pred:5, label:5
+video 298 done, total 299/959, average 0.5109937988396074 sec/video
+video #299, pred:5, label:5
+video 299 done, total 300/959, average 0.5135595178604127 sec/video
+video #300, pred:5, label:5
+video 300 done, total 301/959, average 0.512134237542897 sec/video
+video #301, pred:5, label:5
+video 301 done, total 302/959, average 0.5107179224885852 sec/video
+video #302, pred:2, label:2
+video 302 done, total 303/959, average 0.5095411716121259 sec/video
+video #303, pred:5, label:5
+video 303 done, total 304/959, average 0.5134635999014503 sec/video
+video #304, pred:2, label:0
+video 304 done, total 305/959, average 0.5120885677024967 sec/video
+video #305, pred:5, label:5
+video 305 done, total 306/959, average 0.5137685288011639 sec/video
+video #306, pred:4, label:4
+video 306 done, total 307/959, average 0.5123623116396926 sec/video
+video #307, pred:5, label:5
+video 307 done, total 308/959, average 0.5122444660632641 sec/video
+video #308, pred:5, label:5
+video 308 done, total 309/959, average 0.5108799031637248 sec/video
+video #309, pred:1, label:2
+video 309 done, total 310/959, average 0.5126174926757813 sec/video
+video #310, pred:5, label:5
+video 310 done, total 311/959, average 0.5112335390599978 sec/video
+video #311, pred:5, label:5
+video 311 done, total 312/959, average 0.5113183825443952 sec/video
+video #312, pred:0, label:0
+video 312 done, total 313/959, average 0.5099387092712208 sec/video
+video #313, pred:4, label:4
+video 313 done, total 314/959, average 0.5123229019201485 sec/video
+video #314, pred:5, label:5
+video 314 done, total 315/959, average 0.5109575059678819 sec/video
+video #315, pred:0, label:0
+video 315 done, total 316/959, average 0.5110937960540192 sec/video
+video #316, pred:5, label:5
+video 316 done, total 317/959, average 0.5097559536293101 sec/video
+video #317, pred:5, label:3
+video 317 done, total 318/959, average 0.5109237335013144 sec/video
+video #318, pred:5, label:5
+video 318 done, total 319/959, average 0.509755612914465 sec/video
+video #319, pred:5, label:5
+video 319 done, total 320/959, average 0.5101688377559185 sec/video
+video #320, pred:5, label:5
+video 320 done, total 321/959, average 0.5088333949864468 sec/video
+video #321, pred:4, label:4
+video 321 done, total 322/959, average 0.5103175106996335 sec/video
+video #322, pred:5, label:5
+video 322 done, total 323/959, average 0.5089952192808452 sec/video
+video #323, pred:5, label:5
+video 323 done, total 324/959, average 0.509539877191002 sec/video
+video #324, pred:5, label:5
+video 324 done, total 325/959, average 0.508256918833806 sec/video
+video #325, pred:4, label:4
+video 325 done, total 326/959, average 0.5091426306706996 sec/video
+video #326, pred:5, label:5
+video 326 done, total 327/959, average 0.5078960974282081 sec/video
+video #327, pred:3, label:5
+video 327 done, total 328/959, average 0.5085541845821753 sec/video
+video #328, pred:5, label:5
+video 328 done, total 329/959, average 0.5072566557075477 sec/video
+video #329, pred:2, label:2
+video 329 done, total 330/959, average 0.5081399101199526 sec/video
+video #330, pred:5, label:5
+video 330 done, total 331/959, average 0.506886144419091 sec/video
+video #331, pred:5, label:5
+video 331 done, total 332/959, average 0.5079162293169872 sec/video
+video #332, pred:0, label:0
+video 332 done, total 333/959, average 0.5066364219596794 sec/video
+video #333, pred:0, label:1
+video 333 done, total 334/959, average 0.5072636511511431 sec/video
+video #334, pred:2, label:2
+video 334 done, total 335/959, average 0.5060112583103464 sec/video
+video #335, pred:2, label:2
+video 335 done, total 336/959, average 0.507441181512106 sec/video
+video #336, pred:4, label:4
+video 336 done, total 337/959, average 0.5062023348199861 sec/video
+video #337, pred:0, label:0
+video 337 done, total 338/959, average 0.5064907807570237 sec/video
+video #338, pred:4, label:4
+video 338 done, total 339/959, average 0.5052549086489156 sec/video
+video #339, pred:0, label:0
+video 339 done, total 340/959, average 0.5069739089292639 sec/video
+video #340, pred:5, label:5
+video 340 done, total 341/959, average 0.5057340619151544 sec/video
+video #341, pred:5, label:5
+video 341 done, total 342/959, average 0.5056161504042777 sec/video
+video #342, pred:5, label:5
+video 342 done, total 343/959, average 0.504403699591278 sec/video
+video #343, pred:2, label:2
+video 343 done, total 344/959, average 0.5065028223880502 sec/video
+video #344, pred:5, label:5
+video 344 done, total 345/959, average 0.5052775687065677 sec/video
+video #345, pred:2, label:2
+video 345 done, total 346/959, average 0.5046738413717017 sec/video
+video #346, pred:4, label:4
+video 346 done, total 347/959, average 0.5034749549129167 sec/video
+video #347, pred:5, label:5
+video 347 done, total 348/959, average 0.5057112869175001 sec/video
+video #348, pred:5, label:5
+video 348 done, total 349/959, average 0.5046251516970659 sec/video
+video #349, pred:5, label:5
+video 349 done, total 350/959, average 0.503609504699707 sec/video
+video #350, pred:4, label:4
+video 350 done, total 351/959, average 0.5024483842387838 sec/video
+video #351, pred:2, label:2
+video 351 done, total 352/959, average 0.5055203133008697 sec/video
+video #352, pred:3, label:3
+video 352 done, total 353/959, average 0.5043314820308523 sec/video
+video #353, pred:5, label:5
+video 353 done, total 354/959, average 0.5032330596514341 sec/video
+video #354, pred:5, label:5
+video 354 done, total 355/959, average 0.5020547712352914 sec/video
+video #355, pred:4, label:4
+video 355 done, total 356/959, average 0.5051450427998317 sec/video
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x38ef2c0] moov atom not found
+VIDIOC_REQBUFS: Inappropriate ioctl for device
+video #356, pred:5, label:5
+video 356 done, total 357/959, average 0.5039589438451773 sec/video
+video #357, pred:1, label:0
+video 357 done, total 358/959, average 0.5027878917129346 sec/video
+video #358, pred:5, label:5
+video 358 done, total 359/959, average 0.5016327302768038 sec/video
+video #359, pred:5, label:5
+video 359 done, total 360/959, average 0.5036423371897804 sec/video
+video #360, pred:5, label:5
+video 360 done, total 361/959, average 0.5025410685182609 sec/video
+video #361, pred:2, label:2
+video 361 done, total 362/959, average 0.5019407180132787 sec/video
+video #362, pred:5, label:5
+video 362 done, total 363/959, average 0.5008034312035426 sec/video
+video #363, pred:5, label:5
+video 363 done, total 364/959, average 0.5024526630129132 sec/video
+video #364, pred:5, label:5
+video 364 done, total 365/959, average 0.5013260442916662 sec/video
+video #365, pred:5, label:5
+video 365 done, total 366/959, average 0.5009233632374331 sec/video
+video #366, pred:5, label:5
+video 366 done, total 367/959, average 0.4997896472504743 sec/video
+video #367, pred:5, label:5
+video 367 done, total 368/959, average 0.5024500625289005 sec/video
+video #368, pred:2, label:2
+video 368 done, total 369/959, average 0.5014256836599128 sec/video
+video #369, pred:5, label:5
+video 369 done, total 370/959, average 0.5048342782097894 sec/video
+video #370, pred:5, label:5
+video 370 done, total 371/959, average 0.5037368037951282 sec/video
+video #371, pred:5, label:5
+video 371 done, total 372/959, average 0.5026546197552835 sec/video
+video #372, pred:2, label:2
+video 372 done, total 373/959, average 0.5015795186122045 sec/video
+video #373, pred:5, label:5
+video 373 done, total 374/959, average 0.5044804983598026 sec/video
+video #374, pred:5, label:5
+video 374 done, total 375/959, average 0.5033852666219075 sec/video
+video #375, pred:5, label:5
+video 375 done, total 376/959, average 0.5049226182572385 sec/video
+video #376, pred:3, label:3
+video 376 done, total 377/959, average 0.5038073644713951 sec/video
+video #377, pred:4, label:4
+video 377 done, total 378/959, average 0.5039781079721198 sec/video
+video #378, pred:5, label:5
+video 378 done, total 379/959, average 0.5028906101287197 sec/video
+video #379, pred:0, label:0
+video 379 done, total 380/959, average 0.5044195526524594 sec/video
+video #380, pred:5, label:5
+video 380 done, total 381/959, average 0.5033399677026303 sec/video
+video #381, pred:5, label:5
+video 381 done, total 382/959, average 0.5026745434206817 sec/video
+video #382, pred:2, label:2
+video 382 done, total 383/959, average 0.5015709331701692 sec/video
+video #383, pred:5, label:5
+video 383 done, total 384/959, average 0.5045357756316662 sec/video
+video #384, pred:5, label:3
+video 384 done, total 385/959, average 0.5035824552758947 sec/video
+video #385, pred:2, label:2
+video 385 done, total 386/959, average 0.5025110640056393 sec/video
+video #386, pred:0, label:0
+video 386 done, total 387/959, average 0.5014573936314546 sec/video
+video #387, pred:5, label:5
+video 387 done, total 388/959, average 0.5034168018508203 sec/video
+video #388, pred:0, label:0
+video 388 done, total 389/959, average 0.5023375948780913 sec/video
+video #389, pred:2, label:2
+video 389 done, total 390/959, average 0.5012790802197579 sec/video
+video #390, pred:2, label:2
+video 390 done, total 391/959, average 0.5002536456603224 sec/video
+video #391, pred:5, label:5
+video 391 done, total 392/959, average 0.5028348017712029 sec/video
+video #392, pred:4, label:4
+video 392 done, total 393/959, average 0.5018139425428162 sec/video
+video #393, pred:5, label:5
+video 393 done, total 394/959, average 0.5011290995602681 sec/video
+video #394, pred:4, label:4
+video 394 done, total 395/959, average 0.5000978119765656 sec/video
+video #395, pred:2, label:2
+video 395 done, total 396/959, average 0.5024008070579683 sec/video
+video #396, pred:5, label:3
+video 396 done, total 397/959, average 0.5013857734593696 sec/video
+video #397, pred:5, label:5
+video 397 done, total 398/959, average 0.500424840941501 sec/video
+video #398, pred:5, label:5
+video 398 done, total 399/959, average 0.49944233296807844 sec/video
+video #399, pred:4, label:4
+video 399 done, total 400/959, average 0.5018149763345718 sec/video
+video #400, pred:5, label:5
+video 400 done, total 401/959, average 0.5007717942359144 sec/video
+video #401, pred:4, label:4
+video 401 done, total 402/959, average 0.4999112673659823 sec/video
+video #402, pred:3, label:3
+video 402 done, total 403/959, average 0.4988987936867082 sec/video
+video #403, pred:5, label:5
+video 403 done, total 404/959, average 0.5024928539106162 sec/video
+video #404, pred:2, label:2
+video 404 done, total 405/959, average 0.501460133658515 sec/video
+video #405, pred:5, label:5
+video 405 done, total 406/959, average 0.500444076918616 sec/video
+video #406, pred:5, label:5
+video 406 done, total 407/959, average 0.4995031532550034 sec/video
+video #407, pred:5, label:5
+video 407 done, total 408/959, average 0.5017166412344166 sec/video
+video #408, pred:5, label:5
+video 408 done, total 409/959, average 0.5007174854465102 sec/video
+video #409, pred:2, label:2
+video 409 done, total 410/959, average 0.4997673313792159 sec/video
+video #410, pred:5, label:5
+video 410 done, total 411/959, average 0.49876159066991504 sec/video
+video #411, pred:4, label:4
+video 411 done, total 412/959, average 0.501230298894123 sec/video
+video #412, pred:5, label:5
+video 412 done, total 413/959, average 0.5002113115989556 sec/video
+video #413, pred:2, label:2
+video 413 done, total 414/959, average 0.49927349539770594 sec/video
+video #414, pred:5, label:5
+video 414 done, total 415/959, average 0.4982907875474677 sec/video
+video #415, pred:5, label:5
+video 415 done, total 416/959, average 0.5007052530462925 sec/video
+video #416, pred:2, label:2
+video 416 done, total 417/959, average 0.4997749986122552 sec/video
+video #417, pred:1, label:1
+video 417 done, total 418/959, average 0.49886696703696365 sec/video
+video #418, pred:3, label:5
+video 418 done, total 419/959, average 0.49787428043338167 sec/video
+video #419, pred:5, label:5
+video 419 done, total 420/959, average 0.49963717006501696 sec/video
+video #420, pred:5, label:5
+video 420 done, total 421/959, average 0.4986598672889474 sec/video
+video #421, pred:2, label:2
+video 421 done, total 422/959, average 0.4976719177164738 sec/video
+video #422, pred:5, label:5
+video 422 done, total 423/959, average 0.4967148146167151 sec/video
+video #423, pred:4, label:5
+video 423 done, total 424/959, average 0.4995515773881157 sec/video
+video #424, pred:5, label:5
+video 424 done, total 425/959, average 0.4985853475682876 sec/video
+video #425, pred:5, label:5
+video 425 done, total 426/959, average 0.49762558265471124 sec/video
+video #426, pred:5, label:5
+video 426 done, total 427/959, average 0.4966611873349764 sec/video
+video #427, pred:5, label:5
+video 427 done, total 428/959, average 0.4988759711524036 sec/video
+video #428, pred:5, label:5
+video 428 done, total 429/959, average 0.49796566040643725 sec/video
+video #429, pred:5, label:5
+video 429 done, total 430/959, average 0.4970031904619794 sec/video
+video #430, pred:5, label:5
+video 430 done, total 431/959, average 0.4960389380665224 sec/video
+video #431, pred:5, label:5
+video 431 done, total 432/959, average 0.49814300349465124 sec/video
+video #432, pred:5, label:5
+video 432 done, total 433/959, average 0.4971864939286582 sec/video
+video #433, pred:2, label:2
+video 433 done, total 434/959, average 0.49625774297846076 sec/video
+video #434, pred:5, label:5
+video 434 done, total 435/959, average 0.4954659588035496 sec/video
+video #435, pred:2, label:2
+video 435 done, total 436/959, average 0.49745640787509604 sec/video
+video #436, pred:0, label:0
+video 436 done, total 437/959, average 0.49657768188406726 sec/video
+video #437, pred:2, label:2
+video 437 done, total 438/959, average 0.4956327703989804 sec/video
+video #438, pred:5, label:5
+video 438 done, total 439/959, average 0.4947168794471202 sec/video
+video #439, pred:2, label:2
+video 439 done, total 440/959, average 0.4957700816067782 sec/video
+video #440, pred:5, label:5
+video 440 done, total 441/959, average 0.49517138582778897 sec/video
+video #441, pred:4, label:4
+video 441 done, total 442/959, average 0.49436454859254586 sec/video
+video #442, pred:5, label:5
+video 442 done, total 443/959, average 0.49344691465993495 sec/video
+video #443, pred:2, label:2
+video 443 done, total 444/959, average 0.495183798106941 sec/video
+video #444, pred:5, label:5
+video 444 done, total 445/959, average 0.494377345181583 sec/video
+video #445, pred:5, label:2
+video 445 done, total 446/959, average 0.4935826624455473 sec/video
+video #446, pred:0, label:2
+video 446 done, total 447/959, average 0.4926569632502477 sec/video
+video #447, pred:0, label:0
+video 447 done, total 448/959, average 0.49538778194359373 sec/video
+video #448, pred:0, label:0
+video 448 done, total 449/959, average 0.4947177413311727 sec/video
+video #449, pred:5, label:5
+video 449 done, total 450/959, average 0.49604114214579265 sec/video
+video #450, pred:2, label:5
+video 450 done, total 451/959, average 0.49526727754630956 sec/video
+video #451, pred:4, label:4
+video 451 done, total 452/959, average 0.49497917531865887 sec/video
+video #452, pred:5, label:5
+video 452 done, total 453/959, average 0.4941880466132764 sec/video
+video #453, pred:5, label:5
+video 453 done, total 454/959, average 0.4951612035608502 sec/video
+video #454, pred:3, label:3
+video 454 done, total 455/959, average 0.49431764686500634 sec/video
+video #455, pred:4, label:4
+video 455 done, total 456/959, average 0.49415870298419085 sec/video
+video #456, pred:4, label:4
+video 456 done, total 457/959, average 0.4947632079051412 sec/video
+video #457, pred:5, label:5
+video 457 done, total 458/959, average 0.4949218029538617 sec/video
+video #458, pred:5, label:5
+video 458 done, total 459/959, average 0.4940482442934788 sec/video
+video #459, pred:5, label:5
+video 459 done, total 460/959, average 0.49375474193821783 sec/video
+video #460, pred:5, label:5
+video 460 done, total 461/959, average 0.49351012525744653 sec/video
+video #461, pred:5, label:5
+video 461 done, total 462/959, average 0.49445224685586375 sec/video
+video #462, pred:3, label:3
+video 462 done, total 463/959, average 0.4935621793017789 sec/video
+video #463, pred:3, label:3
+video 463 done, total 464/959, average 0.493166489333942 sec/video
+video #464, pred:0, label:0
+video 464 done, total 465/959, average 0.49317016704108124 sec/video
+video #465, pred:5, label:5
+video 465 done, total 466/959, average 0.49393351855707784 sec/video
+video #466, pred:5, label:5
+video 466 done, total 467/959, average 0.4930457844213449 sec/video
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x39432c0] moov atom not found
+VIDIOC_REQBUFS: Inappropriate ioctl for device
+video #467, pred:5, label:5
+video 467 done, total 468/959, average 0.49271836291011584 sec/video
+video #468, pred:5, label:5
+video 468 done, total 469/959, average 0.49337096356633886 sec/video
+video #469, pred:5, label:5
+video 469 done, total 470/959, average 0.4942228383206307 sec/video
+video #470, pred:5, label:5
+video 470 done, total 471/959, average 0.4933629764872751 sec/video
+video #471, pred:5, label:5
+video 471 done, total 472/959, average 0.496403311268758 sec/video
+video #472, pred:5, label:5
+video 472 done, total 473/959, average 0.49553348599730285 sec/video
+video #473, pred:5, label:5
+video 473 done, total 474/959, average 0.49732200857959213 sec/video
+video #474, pred:3, label:3
+video 474 done, total 475/959, average 0.4964481328663073 sec/video
+video #475, pred:3, label:3
+video 475 done, total 476/959, average 0.4957493979389928 sec/video
+video #476, pred:5, label:5
+video 476 done, total 477/959, average 0.4949232877175513 sec/video
+video #477, pred:5, label:5
+video 477 done, total 478/959, average 0.4966340050038932 sec/video
+video #478, pred:5, label:5
+video 478 done, total 479/959, average 0.4958553239547634 sec/video
+video #479, pred:5, label:5
+video 479 done, total 480/959, average 0.4949924955765406 sec/video
+video #480, pred:5, label:5
+video 480 done, total 481/959, average 0.49415565330124694 sec/video
+video #481, pred:2, label:2
+video 481 done, total 482/959, average 0.49652077795558947 sec/video
+video #482, pred:5, label:5
+video 482 done, total 483/959, average 0.49567876395231447 sec/video
+video #483, pred:2, label:2
+video 483 done, total 484/959, average 0.49498821634891604 sec/video
+video #484, pred:5, label:5
+video 484 done, total 485/959, average 0.4941598194161641 sec/video
+video #485, pred:5, label:0
+video 485 done, total 486/959, average 0.4959170121714902 sec/video
+video #486, pred:5, label:5
+video 486 done, total 487/959, average 0.49507132594835096 sec/video
+video #487, pred:2, label:2
+video 487 done, total 488/959, average 0.49426469353378794 sec/video
+video #488, pred:0, label:0
+video 488 done, total 489/959, average 0.49345154313709594 sec/video
+video #489, pred:4, label:4
+video 489 done, total 490/959, average 0.4953002457716027 sec/video
+video #490, pred:2, label:2
+video 490 done, total 491/959, average 0.49450181020981426 sec/video
+video #491, pred:2, label:2
+video 491 done, total 492/959, average 0.49368123261909175 sec/video
+video #492, pred:0, label:0
+video 492 done, total 493/959, average 0.4928461286649259 sec/video
+video #493, pred:5, label:5
+video 493 done, total 494/959, average 0.4952294228047977 sec/video
+video #494, pred:2, label:2
+video 494 done, total 495/959, average 0.49439118366048795 sec/video
+video #495, pred:5, label:5
+video 495 done, total 496/959, average 0.49356202252449527 sec/video
+video #496, pred:5, label:4
+video 496 done, total 497/959, average 0.4927330904563428 sec/video
+video #497, pred:5, label:5
+video 497 done, total 498/959, average 0.49431827748156937 sec/video
+video #498, pred:3, label:3
+video 498 done, total 499/959, average 0.4935084459537972 sec/video
+video #499, pred:5, label:2
+video 499 done, total 500/959, average 0.49268607568740846 sec/video
+video #500, pred:5, label:3
+video 500 done, total 501/959, average 0.4919700165708622 sec/video
+video #501, pred:5, label:5
+video 501 done, total 502/959, average 0.49366841990634264 sec/video
+video #502, pred:5, label:5
+video 502 done, total 503/959, average 0.4928526480202646 sec/video
+video #503, pred:5, label:5
+video 503 done, total 504/959, average 0.49205281857460265 sec/video
+video #504, pred:5, label:5
+video 504 done, total 505/959, average 0.49125661755552386 sec/video
+video #505, pred:5, label:5
+video 505 done, total 506/959, average 0.4927883463885944 sec/video
+video #506, pred:5, label:5
+video 506 done, total 507/959, average 0.49197417415340505 sec/video
+video #507, pred:4, label:4
+video 507 done, total 508/959, average 0.4912530512321652 sec/video
+video #508, pred:5, label:5
+video 508 done, total 509/959, average 0.4904451913590047 sec/video
+video #509, pred:5, label:5
+video 509 done, total 510/959, average 0.4922654666152655 sec/video
+video #510, pred:5, label:5
+video 510 done, total 511/959, average 0.49146465592654953 sec/video
+video #511, pred:5, label:5
+video 511 done, total 512/959, average 0.4906739196740091 sec/video
+video #512, pred:3, label:3
+video 512 done, total 513/959, average 0.48987247836984854 sec/video
+video #513, pred:2, label:2
+video 513 done, total 514/959, average 0.49134047300435224 sec/video
+video #514, pred:5, label:5
+video 514 done, total 515/959, average 0.49057285068104567 sec/video
+video #515, pred:5, label:5
+video 515 done, total 516/959, average 0.4900371885114862 sec/video
+video #516, pred:5, label:5
+video 516 done, total 517/959, average 0.4893512490639604 sec/video
+video #517, pred:3, label:3
+video 517 done, total 518/959, average 0.49088791668645204 sec/video
+video #518, pred:2, label:2
+video 518 done, total 519/959, average 0.49011576566163284 sec/video
+video #519, pred:5, label:5
+video 519 done, total 520/959, average 0.48966145744690526 sec/video
+video #520, pred:2, label:5
+video 520 done, total 521/959, average 0.48888586716093624 sec/video
+video #521, pred:5, label:5
+video 521 done, total 522/959, average 0.49028797807364627 sec/video
+video #522, pred:5, label:5
+video 522 done, total 523/959, average 0.48954967467780325 sec/video
+video #523, pred:4, label:4
+video 523 done, total 524/959, average 0.48903122658037956 sec/video
+video #524, pred:4, label:4
+video 524 done, total 525/959, average 0.4882641787756057 sec/video
+video #525, pred:0, label:0
+video 525 done, total 526/959, average 0.4900968949604397 sec/video
+video #526, pred:5, label:3
+video 526 done, total 527/959, average 0.4893383531914264 sec/video
+video #527, pred:5, label:5
+video 527 done, total 528/959, average 0.4885848385818077 sec/video
+video #528, pred:5, label:5
+video 528 done, total 529/959, average 0.48781652802104986 sec/video
+video #529, pred:5, label:5
+video 529 done, total 530/959, average 0.48998235531573026 sec/video
+video #530, pred:4, label:5
+video 530 done, total 531/959, average 0.4892263870454777 sec/video
+video #531, pred:5, label:5
+video 531 done, total 532/959, average 0.4884920200907198 sec/video
+video #532, pred:5, label:5
+video 532 done, total 533/959, average 0.4877546598495283 sec/video
+video #533, pred:2, label:2
+video 533 done, total 534/959, average 0.48935403627402774 sec/video
+video #534, pred:5, label:5
+video 534 done, total 535/959, average 0.48859295221132654 sec/video
+video #535, pred:2, label:2
+video 535 done, total 536/959, average 0.48783998836332293 sec/video
+video #536, pred:5, label:5
+video 536 done, total 537/959, average 0.48711455689684197 sec/video
+video #537, pred:5, label:5
+video 537 done, total 538/959, average 0.48842364793373305 sec/video
+video #538, pred:5, label:5
+video 538 done, total 539/959, average 0.4877210203039845 sec/video
+video #539, pred:4, label:4
+video 539 done, total 540/959, average 0.4871065687250208 sec/video
+video #540, pred:5, label:5
+video 540 done, total 541/959, average 0.48638354696319636 sec/video
+video #541, pred:5, label:5
+video 541 done, total 542/959, average 0.48896035672993676 sec/video
+video #542, pred:5, label:4
+video 542 done, total 543/959, average 0.48823023413206773 sec/video
+video #543, pred:5, label:5
+video 543 done, total 544/959, average 0.4893311884473352 sec/video
+video #544, pred:5, label:5
+video 544 done, total 545/959, average 0.4885988506702108 sec/video
+video #545, pred:5, label:5
+video 545 done, total 546/959, average 0.48845332315116574 sec/video
+video #546, pred:5, label:5
+video 546 done, total 547/959, average 0.48774262015082936 sec/video
+video #547, pred:5, label:5
+video 547 done, total 548/959, average 0.48835236617248423 sec/video
+video #548, pred:2, label:2
+video 548 done, total 549/959, average 0.48762076626275624 sec/video
+video #549, pred:3, label:3
+video 549 done, total 550/959, average 0.4881377211484042 sec/video
+video #550, pred:2, label:2
+video 550 done, total 551/959, average 0.4874797295745185 sec/video
+video #551, pred:5, label:5
+video 551 done, total 552/959, average 0.4882101896016494 sec/video
+video #552, pred:4, label:4
+video 552 done, total 553/959, average 0.4874964049237546 sec/video
+video #553, pred:5, label:5
+video 553 done, total 554/959, average 0.488224489163836 sec/video
+video #554, pred:5, label:5
+video 554 done, total 555/959, average 0.4875126718400835 sec/video
+video #555, pred:5, label:5
+video 555 done, total 556/959, average 0.48757544052686624 sec/video
+video #556, pred:5, label:5
+video 556 done, total 557/959, average 0.48686850648808094 sec/video
+video #557, pred:3, label:3
+video 557 done, total 558/959, average 0.48813588217595144 sec/video
+video #558, pred:5, label:5
+video 558 done, total 559/959, average 0.4874580098392712 sec/video
+video #559, pred:0, label:2
+video 559 done, total 560/959, average 0.48741878058229177 sec/video
+video #560, pred:5, label:5
+video 560 done, total 561/959, average 0.48672364229824455 sec/video
+video #561, pred:2, label:2
+video 561 done, total 562/959, average 0.4878904836457819 sec/video
+video #562, pred:2, label:2
+video 562 done, total 563/959, average 0.4871829398783655 sec/video
+video #563, pred:4, label:4
+video 563 done, total 564/959, average 0.4868548258822015 sec/video
+video #564, pred:5, label:4
+video 564 done, total 565/959, average 0.4861719540790119 sec/video
+video #565, pred:4, label:4
+video 565 done, total 566/959, average 0.48764366985631075 sec/video
+video #566, pred:5, label:5
+video 566 done, total 567/959, average 0.4870316519728834 sec/video
+video #567, pred:0, label:0
+video 567 done, total 568/959, average 0.4864752565471219 sec/video
+video #568, pred:5, label:5
+video 568 done, total 569/959, average 0.48576552880459806 sec/video
+video #569, pred:5, label:5
+video 569 done, total 570/959, average 0.48790877409148636 sec/video
+video #570, pred:5, label:5
+video 570 done, total 571/959, average 0.48721001945736114 sec/video
+video #571, pred:5, label:5
+video 571 done, total 572/959, average 0.4865196555644482 sec/video
+video #572, pred:5, label:5
+video 572 done, total 573/959, average 0.48582393253452905 sec/video
+video #573, pred:5, label:5
+video 573 done, total 574/959, average 0.48733834979426155 sec/video
+video #574, pred:2, label:2
+video 574 done, total 575/959, average 0.48664489911950154 sec/video
+video #575, pred:5, label:5
+video 575 done, total 576/959, average 0.4859393748144309 sec/video
+video #576, pred:5, label:5
+video 576 done, total 577/959, average 0.4852436344999581 sec/video
+video #577, pred:5, label:5
+video 577 done, total 578/959, average 0.4870486927692453 sec/video
+video #578, pred:5, label:5
+video 578 done, total 579/959, average 0.4864035315670086 sec/video
+video #579, pred:4, label:4
+video 579 done, total 580/959, average 0.48571275554854293 sec/video
+video #580, pred:2, label:2
+video 580 done, total 581/959, average 0.48503736784864415 sec/video
+video #581, pred:5, label:5
+video 581 done, total 582/959, average 0.4866375333255099 sec/video
+video #582, pred:5, label:2
+video 582 done, total 583/959, average 0.48604455165961186 sec/video
+video #583, pred:5, label:5
+video 583 done, total 584/959, average 0.485361977799298 sec/video
+video #584, pred:4, label:4
+video 584 done, total 585/959, average 0.48466816600571333 sec/video
+video #585, pred:2, label:2
+video 585 done, total 586/959, average 0.48611148917227476 sec/video
+video #586, pred:5, label:5
+video 586 done, total 587/959, average 0.4855153308816419 sec/video
+video #587, pred:4, label:4
+video 587 done, total 588/959, average 0.4848432954476804 sec/video
+video #588, pred:3, label:3
+video 588 done, total 589/959, average 0.4841865068380618 sec/video
+video #589, pred:1, label:1
+video 589 done, total 590/959, average 0.4854891490128081 sec/video
+video #590, pred:5, label:5
+video 590 done, total 591/959, average 0.4848141799320021 sec/video
+video #591, pred:1, label:1
+video 591 done, total 592/959, average 0.48418835087402445 sec/video
+video #592, pred:0, label:2
+video 592 done, total 593/959, average 0.48350989114976856 sec/video
+video #593, pred:4, label:4
+video 593 done, total 594/959, average 0.484969179236929 sec/video
+video #594, pred:5, label:5
+video 594 done, total 595/959, average 0.4843544150600914 sec/video
+video #595, pred:5, label:5
+video 595 done, total 596/959, average 0.48369824646303317 sec/video
+video #596, pred:2, label:2
+video 596 done, total 597/959, average 0.4830468303993519 sec/video
+video #597, pred:2, label:2
+video 597 done, total 598/959, average 0.48449270541851336 sec/video
+video #598, pred:5, label:5
+video 598 done, total 599/959, average 0.4838235322541506 sec/video
+video #599, pred:5, label:5
+video 599 done, total 600/959, average 0.4832980442047119 sec/video
+video #600, pred:5, label:5
+video 600 done, total 601/959, average 0.4827664695841302 sec/video
+video #601, pred:4, label:2
+video 601 done, total 602/959, average 0.48421440924520903 sec/video
+video #602, pred:5, label:5
+video 602 done, total 603/959, average 0.48360773105526444 sec/video
+video #603, pred:5, label:5
+video 603 done, total 604/959, average 0.4829580645687533 sec/video
+video #604, pred:2, label:2
+video 604 done, total 605/959, average 0.4823046877364482 sec/video
+video #605, pred:5, label:5
+video 605 done, total 606/959, average 0.48368362585703534 sec/video
+video #606, pred:5, label:5
+video 606 done, total 607/959, average 0.4830633062114433 sec/video
+video #607, pred:5, label:5
+video 607 done, total 608/959, average 0.4824242050710477 sec/video
+video #608, pred:2, label:2
+video 608 done, total 609/959, average 0.48176545814927574 sec/video
+video #609, pred:3, label:5
+video 609 done, total 610/959, average 0.4830403335758897 sec/video
+video #610, pred:5, label:5
+video 610 done, total 611/959, average 0.4824047521756636 sec/video
+video #611, pred:5, label:5
+video 611 done, total 612/959, average 0.4817924211227816 sec/video
+video #612, pred:3, label:3
+video 612 done, total 613/959, average 0.48114257535576627 sec/video
+video #613, pred:4, label:4
+video 613 done, total 614/959, average 0.4828201975030309 sec/video
+video #614, pred:2, label:2
+video 614 done, total 615/959, average 0.48216600650694313 sec/video
+video #615, pred:2, label:2
+video 615 done, total 616/959, average 0.4815686461213347 sec/video
+video #616, pred:5, label:5
+video 616 done, total 617/959, average 0.48092965484631506 sec/video
+video #617, pred:1, label:1
+video 617 done, total 618/959, average 0.4818648867622548 sec/video
+video #618, pred:5, label:5
+video 618 done, total 619/959, average 0.4812752923210526 sec/video
+video #619, pred:5, label:5
+video 619 done, total 620/959, average 0.48065672151504024 sec/video
+video #620, pred:5, label:5
+video 620 done, total 621/959, average 0.4800191566755998 sec/video
+video #621, pred:5, label:5
+video 621 done, total 622/959, average 0.4814569685620127 sec/video
+video #622, pred:5, label:5
+video 622 done, total 623/959, average 0.48088233237473194 sec/video
+video #623, pred:5, label:5
+video 623 done, total 624/959, average 0.48025133441656065 sec/video
+video #624, pred:5, label:5
+video 624 done, total 625/959, average 0.47963199043273924 sec/video
+video #625, pred:5, label:5
+video 625 done, total 626/959, average 0.4809567387492512 sec/video
+video #626, pred:5, label:5
+video 626 done, total 627/959, average 0.48034569407193856 sec/video
+video #627, pred:5, label:5
+video 627 done, total 628/959, average 0.47981149072100404 sec/video
+video #628, pred:5, label:5
+video 628 done, total 629/959, average 0.4793084080912919 sec/video
+video #629, pred:5, label:5
+video 629 done, total 630/959, average 0.48130812455737404 sec/video
+video #630, pred:5, label:5
+video 630 done, total 631/959, average 0.4806713698972046 sec/video
+video #631, pred:5, label:5
+video 631 done, total 632/959, average 0.48195750162571294 sec/video
+video #632, pred:5, label:5
+video 632 done, total 633/959, average 0.48140805517139407 sec/video
+video #633, pred:5, label:5
+video 633 done, total 634/959, average 0.48096559664428423 sec/video
+video #634, pred:5, label:5
+video 634 done, total 635/959, average 0.48035152240062323 sec/video
+video #635, pred:2, label:2
+video 635 done, total 636/959, average 0.4822660662093253 sec/video
+video #636, pred:2, label:2
+video 636 done, total 637/959, average 0.4816412959405728 sec/video
+video #637, pred:3, label:3
+video 637 done, total 638/959, average 0.48109709693346653 sec/video
+video #638, pred:5, label:5
+video 638 done, total 639/959, average 0.48048596837337776 sec/video
+video #639, pred:3, label:3
+video 639 done, total 640/959, average 0.48203578777611256 sec/video
+video #640, pred:5, label:5
+video 640 done, total 641/959, average 0.48141020545721425 sec/video
+video #641, pred:5, label:5
+video 641 done, total 642/959, average 0.48080543751285826 sec/video
+video #642, pred:5, label:5
+video 642 done, total 643/959, average 0.4802210820407185 sec/video
+video #643, pred:5, label:5
+video 643 done, total 644/959, average 0.48150937194409577 sec/video
+video #644, pred:5, label:5
+video 644 done, total 645/959, average 0.4808970373730327 sec/video
+video #645, pred:5, label:5
+video 645 done, total 646/959, average 0.4829191988097625 sec/video
+video #646, pred:0, label:0
+video 646 done, total 647/959, average 0.482330757462444 sec/video
+video #647, pred:5, label:5
+video 647 done, total 648/959, average 0.4817412061455809 sec/video
+video #648, pred:5, label:5
+video 648 done, total 649/959, average 0.48277684940579124 sec/video
+video #649, pred:5, label:5
+video 649 done, total 650/959, average 0.48244899162879357 sec/video
+video #650, pred:5, label:5
+video 650 done, total 651/959, average 0.481843262773505 sec/video
+video #651, pred:2, label:2
+video 651 done, total 652/959, average 0.4812528798185243 sec/video
+video #652, pred:0, label:0
+video 652 done, total 653/959, average 0.4821965986517633 sec/video
+video #653, pred:5, label:5
+video 653 done, total 654/959, average 0.4819781554219191 sec/video
+video #654, pred:3, label:3
+video 654 done, total 655/959, average 0.4813714438722334 sec/video
+video #655, pred:4, label:4
+video 655 done, total 656/959, average 0.48077284490189903 sec/video
+video #656, pred:5, label:5
+video 656 done, total 657/959, average 0.4817108835803864 sec/video
+video #657, pred:5, label:5
+video 657 done, total 658/959, average 0.481715214651044 sec/video
+video #658, pred:2, label:0
+video 658 done, total 659/959, average 0.48112392172285207 sec/video
+video #659, pred:5, label:5
+video 659 done, total 660/959, average 0.4805185863465974 sec/video
+video #660, pred:5, label:5
+video 660 done, total 661/959, average 0.48126858878604584 sec/video
+video #661, pred:2, label:2
+video 661 done, total 662/959, average 0.48157021322279175 sec/video
+video #662, pred:3, label:3
+video 662 done, total 663/959, average 0.48100487211351123 sec/video
+video #663, pred:5, label:3
+video 663 done, total 664/959, average 0.4804165162235858 sec/video
+video #664, pred:4, label:4
+video 664 done, total 665/959, average 0.48128281894483066 sec/video
+video #665, pred:0, label:0
+video 665 done, total 666/959, average 0.48148922125498456 sec/video
+video #666, pred:5, label:5
+video 666 done, total 667/959, average 0.4808971724588832 sec/video
+video #667, pred:1, label:2
+video 667 done, total 668/959, average 0.48031378898791927 sec/video
+video #668, pred:3, label:3
+video 668 done, total 669/959, average 0.4813713845650711 sec/video
+video #669, pred:5, label:5
+video 669 done, total 670/959, average 0.48106176746425344 sec/video
+video #670, pred:2, label:2
+video 670 done, total 671/959, average 0.4804657340582721 sec/video
+video #671, pred:5, label:5
+video 671 done, total 672/959, average 0.4798987149482682 sec/video
+video #672, pred:0, label:0
+video 672 done, total 673/959, average 0.48107359490812623 sec/video
+video #673, pred:0, label:0
+video 673 done, total 674/959, average 0.48080223957933377 sec/video
+video #674, pred:5, label:5
+video 674 done, total 675/959, average 0.48022393191302265 sec/video
+video #675, pred:4, label:4
+video 675 done, total 676/959, average 0.4796372465128024 sec/video
+video #676, pred:5, label:5
+video 676 done, total 677/959, average 0.48110950785514345 sec/video
+video #677, pred:5, label:5
+video 677 done, total 678/959, average 0.48065091375052754 sec/video
+video #678, pred:5, label:5
+video 678 done, total 679/959, average 0.4800741907774261 sec/video
+video #679, pred:0, label:0
+video 679 done, total 680/959, average 0.47949833168702966 sec/video
+video #680, pred:5, label:5
+video 680 done, total 681/959, average 0.4808693268225582 sec/video
+video #681, pred:5, label:5
+video 681 done, total 682/959, average 0.48044724233688846 sec/video
+video #682, pred:5, label:5
+video 682 done, total 683/959, average 0.4798999883419947 sec/video
+video #683, pred:2, label:5
+video 683 done, total 684/959, average 0.4793278459917035 sec/video
+video #684, pred:5, label:5
+video 684 done, total 685/959, average 0.48053670660422665 sec/video
+video #685, pred:4, label:4
+video 685 done, total 686/959, average 0.48007561236011737 sec/video
+video #686, pred:5, label:5
+video 686 done, total 687/959, average 0.47958849645945006 sec/video
+video #687, pred:1, label:1
+video 687 done, total 688/959, average 0.479017804181853 sec/video
+video #688, pred:5, label:5
+video 688 done, total 689/959, average 0.4803451232190402 sec/video
+video #689, pred:5, label:5
+video 689 done, total 690/959, average 0.4798862889193106 sec/video
+video #690, pred:5, label:2
+video 690 done, total 691/959, average 0.47935499951739385 sec/video
+video #691, pred:2, label:2
+video 691 done, total 692/959, average 0.4787770861146078 sec/video
+video #692, pred:5, label:5
+video 692 done, total 693/959, average 0.4800426144620557 sec/video
+video #693, pred:5, label:5
+video 693 done, total 694/959, average 0.47952177132928064 sec/video
+video #694, pred:5, label:5
+video 694 done, total 695/959, average 0.47907031148457696 sec/video
+video #695, pred:5, label:5
+video 695 done, total 696/959, average 0.47850230267678184 sec/video
+video #696, pred:5, label:5
+video 696 done, total 697/959, average 0.47945094724296666 sec/video
+video #697, pred:5, label:5
+video 697 done, total 698/959, average 0.4793765408261799 sec/video
+video #698, pred:5, label:5
+video 698 done, total 699/959, average 0.47885929224999335 sec/video
+video #699, pred:4, label:4
+video 699 done, total 700/959, average 0.4782994679042271 sec/video
+video #700, pred:5, label:5
+video 700 done, total 701/959, average 0.47894156982487174 sec/video
+video #701, pred:0, label:0
+video 701 done, total 702/959, average 0.4790787296077804 sec/video
+video #702, pred:5, label:5
+video 702 done, total 703/959, average 0.478511557979231 sec/video
+video #703, pred:2, label:1
+video 703 done, total 704/959, average 0.47796123678034 sec/video
+video #704, pred:3, label:5
+video 704 done, total 705/959, average 0.4787184508979743 sec/video
+video #705, pred:2, label:2
+video 705 done, total 706/959, average 0.47859160960902575 sec/video
+video #706, pred:5, label:5
+video 706 done, total 707/959, average 0.4780520806049525 sec/video
+video #707, pred:5, label:4
+video 707 done, total 708/959, average 0.47750826845061306 sec/video
+video #708, pred:5, label:5
+video 708 done, total 709/959, average 0.48080736692937037 sec/video
+video #709, pred:5, label:5
+video 709 done, total 710/959, average 0.4802549016307777 sec/video
+video #710, pred:5, label:5
+video 710 done, total 711/959, average 0.4797550974683587 sec/video
+video #711, pred:5, label:3
+video 711 done, total 712/959, average 0.47923305195369076 sec/video
+video #712, pred:0, label:0
+video 712 done, total 713/959, average 0.48034385544722075 sec/video
+video #713, pred:3, label:5
+video 713 done, total 714/959, average 0.47981211818566843 sec/video
+video #714, pred:5, label:5
+video 714 done, total 715/959, average 0.47936981541293483 sec/video
+video #715, pred:0, label:0
+video 715 done, total 716/959, average 0.47884351880856735 sec/video
+video #716, pred:2, label:4
+video 716 done, total 717/959, average 0.480195384311543 sec/video
+video #717, pred:5, label:5
+video 717 done, total 718/959, average 0.47967298416042065 sec/video
+video #718, pred:2, label:5
+video 718 done, total 719/959, average 0.4791354022205125 sec/video
+video #719, pred:5, label:5
+video 719 done, total 720/959, average 0.4785881006055408 sec/video
+video #720, pred:5, label:5
+video 720 done, total 721/959, average 0.4800653596526211 sec/video
+video #721, pred:5, label:2
+video 721 done, total 722/959, average 0.47951322249098166 sec/video
+video #722, pred:5, label:5
+video 722 done, total 723/959, average 0.478967593418612 sec/video
+video #723, pred:0, label:0
+video 723 done, total 724/959, average 0.47842263352146464 sec/video
+video #724, pred:5, label:5
+video 724 done, total 725/959, average 0.4798538125794509 sec/video
+video #725, pred:5, label:5
+video 725 done, total 726/959, average 0.48070932781072356 sec/video
+video #726, pred:4, label:4
+video 726 done, total 727/959, average 0.48016852066638216 sec/video
+video #727, pred:5, label:5
+video 727 done, total 728/959, average 0.47964360884257723 sec/video
+video #728, pred:5, label:0
+video 728 done, total 729/959, average 0.4795786454680852 sec/video
+video #729, pred:5, label:5
+video 729 done, total 730/959, average 0.480053077331961 sec/video
+video #730, pred:5, label:5
+video 730 done, total 731/959, average 0.4795102078350396 sec/video
+video #731, pred:5, label:5
+video 731 done, total 732/959, average 0.47902965057091634 sec/video
+video #732, pred:5, label:5
+video 732 done, total 733/959, average 0.47934030543245365 sec/video
+video #733, pred:3, label:3
+video 733 done, total 734/959, average 0.47985351248073316 sec/video
+video #734, pred:5, label:5
+video 734 done, total 735/959, average 0.479341205934278 sec/video
+video #735, pred:5, label:5
+video 735 done, total 736/959, average 0.47881176484667737 sec/video
+video #736, pred:5, label:5
+video 736 done, total 737/959, average 0.47927288931454537 sec/video
+video #737, pred:5, label:5
+video 737 done, total 738/959, average 0.47985528122764937 sec/video
+video #738, pred:5, label:5
+video 738 done, total 739/959, average 0.4793162545912643 sec/video
+video #739, pred:2, label:2
+video 739 done, total 740/959, average 0.4788140519245251 sec/video
+video #740, pred:5, label:5
+video 740 done, total 741/959, average 0.47903324557058563 sec/video
+video #741, pred:2, label:2
+video 741 done, total 742/959, average 0.4800921582147439 sec/video
+video #742, pred:0, label:0
+video 742 done, total 743/959, average 0.4795542010388175 sec/video
+video #743, pred:4, label:4
+video 743 done, total 744/959, average 0.4790248768303984 sec/video
+video #744, pred:5, label:5
+video 744 done, total 745/959, average 0.47906150433841166 sec/video
+video #745, pred:5, label:5
+video 745 done, total 746/959, average 0.47966997744890066 sec/video
+video #746, pred:5, label:5
+video 746 done, total 747/959, average 0.4791922013922389 sec/video
+video #747, pred:5, label:5
+video 747 done, total 748/959, average 0.47874231007009904 sec/video
+video #748, pred:5, label:5
+video 748 done, total 749/959, average 0.47863840961328974 sec/video
+video #749, pred:5, label:5
+video 749 done, total 750/959, average 0.4791945972442627 sec/video
+video #750, pred:4, label:2
+video 750 done, total 751/959, average 0.47870618843048135 sec/video
+video #751, pred:2, label:2
+video 751 done, total 752/959, average 0.4782528246336795 sec/video
+video #752, pred:0, label:2
+video 752 done, total 753/959, average 0.47820349138571444 sec/video
+video #753, pred:0, label:0
+video 753 done, total 754/959, average 0.47903895789179307 sec/video
+video #754, pred:5, label:5
+video 754 done, total 755/959, average 0.4785466105732697 sec/video
+video #755, pred:4, label:4
+video 755 done, total 756/959, average 0.4780321786643336 sec/video
+video #756, pred:5, label:5
+video 756 done, total 757/959, average 0.4778295945932245 sec/video
+video #757, pred:5, label:5
+video 757 done, total 758/959, average 0.4787171443722808 sec/video
+video #758, pred:2, label:2
+video 758 done, total 759/959, average 0.47820307740423834 sec/video
+video #759, pred:5, label:5
+video 759 done, total 760/959, average 0.47773658413636055 sec/video
+video #760, pred:2, label:2
+video 760 done, total 761/959, average 0.47750258915684385 sec/video
+video #761, pred:5, label:5
+video 761 done, total 762/959, average 0.4785119864571439 sec/video
+video #762, pred:5, label:5
+video 762 done, total 763/959, average 0.4780244967884349 sec/video
+video #763, pred:4, label:4
+video 763 done, total 764/959, average 0.47768353323661844 sec/video
+video #764, pred:5, label:5
+video 764 done, total 765/959, average 0.47729644027410767 sec/video
+video #765, pred:3, label:3
+video 765 done, total 766/959, average 0.4784465041546535 sec/video
+video #766, pred:5, label:5
+video 766 done, total 767/959, average 0.4779479323341141 sec/video
+video #767, pred:5, label:5
+video 767 done, total 768/959, average 0.47748627606779337 sec/video
+video #768, pred:5, label:5
+video 768 done, total 769/959, average 0.47698172450220633 sec/video
+video #769, pred:0, label:0
+video 769 done, total 770/959, average 0.4784421716417585 sec/video
+video #770, pred:5, label:5
+video 770 done, total 771/959, average 0.47792798164753597 sec/video
+video #771, pred:5, label:5
+video 771 done, total 772/959, average 0.4774359081693264 sec/video
+video #772, pred:2, label:0
+video 772 done, total 773/959, average 0.47694241244919394 sec/video
+video #773, pred:3, label:3
+video 773 done, total 774/959, average 0.4781119965151607 sec/video
+video #774, pred:4, label:4
+video 774 done, total 775/959, average 0.4776047306676065 sec/video
+video #775, pred:2, label:5
+video 775 done, total 776/959, average 0.4771019085166381 sec/video
+video #776, pred:2, label:2
+video 776 done, total 777/959, average 0.4765980424721422 sec/video
+video #777, pred:4, label:4
+video 777 done, total 778/959, average 0.4776465662953786 sec/video
+video #778, pred:5, label:5
+video 778 done, total 779/959, average 0.4771396728167944 sec/video
+video #779, pred:5, label:5
+video 779 done, total 780/959, average 0.47663904428482057 sec/video
+video #780, pred:2, label:2
+video 780 done, total 781/959, average 0.47618801004602723 sec/video
+video #781, pred:5, label:5
+video 781 done, total 782/959, average 0.47742637984283137 sec/video
+video #782, pred:2, label:2
+video 782 done, total 783/959, average 0.47693894740722187 sec/video
+video #783, pred:2, label:2
+video 783 done, total 784/959, average 0.47643534869563825 sec/video
+video #784, pred:5, label:5
+video 784 done, total 785/959, average 0.4759352623277409 sec/video
+video #785, pred:5, label:5
+video 785 done, total 786/959, average 0.4770881389540267 sec/video
+video #786, pred:3, label:3
+video 786 done, total 787/959, average 0.476584216993979 sec/video
+video #787, pred:5, label:5
+video 787 done, total 788/959, average 0.4761143874395922 sec/video
+video #788, pred:2, label:2
+video 788 done, total 789/959, average 0.4756338239773749 sec/video
+video #789, pred:5, label:5
+video 789 done, total 790/959, average 0.47652689897561373 sec/video
+video #790, pred:5, label:5
+video 790 done, total 791/959, average 0.4760342638953748 sec/video
+video #791, pred:5, label:5
+video 791 done, total 792/959, average 0.475766132576297 sec/video
+video #792, pred:5, label:5
+video 792 done, total 793/959, average 0.47527234250630285 sec/video
+video #793, pred:5, label:2
+video 793 done, total 794/959, average 0.4760368807189711 sec/video
+video #794, pred:5, label:5
+video 794 done, total 795/959, average 0.4755536319324805 sec/video
+video #795, pred:5, label:5
+video 795 done, total 796/959, average 0.4751173147005052 sec/video
+video #796, pred:5, label:0
+video 796 done, total 797/959, average 0.47468345856277677 sec/video
+video #797, pred:2, label:2
+video 797 done, total 798/959, average 0.47629744576332267 sec/video
+video #798, pred:5, label:5
+video 798 done, total 799/959, average 0.47581947909129574 sec/video
+video #799, pred:5, label:5
+video 799 done, total 800/959, average 0.47534036457538603 sec/video
+video #800, pred:5, label:5
+video 800 done, total 801/959, average 0.47485317660032883 sec/video
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x3a26640] moov atom not found
+VIDIOC_REQBUFS: Inappropriate ioctl for device
+video #801, pred:2, label:2
+video 801 done, total 802/959, average 0.4761222119343251 sec/video
+video #802, pred:5, label:3
+video 802 done, total 803/959, average 0.47562962659120855 sec/video
+video #803, pred:2, label:2
+video 803 done, total 804/959, average 0.47513685445880416 sec/video
+video #804, pred:5, label:5
+video 804 done, total 805/959, average 0.47464596973442885 sec/video
+video #805, pred:5, label:5
+video 805 done, total 806/959, average 0.47570450785142315 sec/video
+video #806, pred:5, label:5
+video 806 done, total 807/959, average 0.4752276711895268 sec/video
+video #807, pred:0, label:0
+video 807 done, total 808/959, average 0.47474770557762375 sec/video
+video #808, pred:5, label:5
+video 808 done, total 809/959, average 0.47427158450019374 sec/video
+video #809, pred:5, label:5
+video 809 done, total 810/959, average 0.4752543025546604 sec/video
+video #810, pred:4, label:4
+video 810 done, total 811/959, average 0.4748079914934979 sec/video
+video #811, pred:5, label:5
+video 811 done, total 812/959, average 0.4743812210454142 sec/video
+video #812, pred:5, label:5
+video 812 done, total 813/959, average 0.4739045727296949 sec/video
+video #813, pred:5, label:5
+video 813 done, total 814/959, average 0.47489359689286065 sec/video
+video #814, pred:2, label:5
+video 814 done, total 815/959, average 0.4744108396073792 sec/video
+video #815, pred:5, label:5
+video 815 done, total 816/959, average 0.4741104423415427 sec/video
+video #816, pred:5, label:5
+video 816 done, total 817/959, average 0.4736489814819 sec/video
+video #817, pred:0, label:0
+video 817 done, total 818/959, average 0.4745612156128825 sec/video
+video #818, pred:2, label:5
+video 818 done, total 819/959, average 0.4740987805074242 sec/video
+video #819, pred:5, label:5
+video 819 done, total 820/959, average 0.47414218332709335 sec/video
+video #820, pred:2, label:2
+video 820 done, total 821/959, average 0.4736732033951419 sec/video
+video #821, pred:5, label:5
+video 821 done, total 822/959, average 0.47409672429671834 sec/video
+video #822, pred:5, label:5
+video 822 done, total 823/959, average 0.47363868084162436 sec/video
+video #823, pred:2, label:2
+video 823 done, total 824/959, average 0.4740087019587026 sec/video
+video #824, pred:5, label:5
+video 824 done, total 825/959, average 0.4735525093656598 sec/video
+video #825, pred:5, label:5
+video 825 done, total 826/959, average 0.4743551694163399 sec/video
+video #826, pred:5, label:5
+video 826 done, total 827/959, average 0.475139297914332 sec/video
+video #827, pred:5, label:5
+video 827 done, total 828/959, average 0.4746723938103459 sec/video
+video #828, pred:5, label:5
+video 828 done, total 829/959, average 0.4741973874077147 sec/video
+video #829, pred:5, label:5
+video 829 done, total 830/959, average 0.4742776554751109 sec/video
+video #830, pred:5, label:5
+video 830 done, total 831/959, average 0.47501550340480325 sec/video
+video #831, pred:2, label:2
+video 831 done, total 832/959, average 0.47455251618073535 sec/video
+video #832, pred:2, label:2
+video 832 done, total 833/959, average 0.47409531792529636 sec/video
+video #833, pred:5, label:5
+video 833 done, total 834/959, average 0.47376565138498944 sec/video
+video #834, pred:5, label:5
+video 834 done, total 835/959, average 0.47481835331031663 sec/video
+video #835, pred:3, label:3
+video 835 done, total 836/959, average 0.47440669610739894 sec/video
+video #836, pred:0, label:0
+video 836 done, total 837/959, average 0.4739486746748146 sec/video
+video #837, pred:5, label:5
+video 837 done, total 838/959, average 0.47350135395805704 sec/video
+video #838, pred:5, label:3
+video 838 done, total 839/959, average 0.4745098669281733 sec/video
+video #839, pred:5, label:5
+video 839 done, total 840/959, average 0.47407065629959105 sec/video
+video #840, pred:5, label:5
+video 840 done, total 841/959, average 0.4736111538305294 sec/video
+video #841, pred:0, label:0
+video 841 done, total 842/959, average 0.47317903936617167 sec/video
+video #842, pred:2, label:2
+video 842 done, total 843/959, average 0.47443025137606043 sec/video
+video #843, pred:5, label:5
+video 843 done, total 844/959, average 0.4740024827667887 sec/video
+video #844, pred:5, label:5
+video 844 done, total 845/959, average 0.47357571308429425 sec/video
+video #845, pred:3, label:3
+video 845 done, total 846/959, average 0.473118832207177 sec/video
+video #846, pred:5, label:5
+video 846 done, total 847/959, average 0.474046810740141 sec/video
+video #847, pred:5, label:5
+video 847 done, total 848/959, average 0.4736166835393546 sec/video
+video #848, pred:5, label:5
+video 848 done, total 849/959, average 0.4731630506728928 sec/video
+video #849, pred:5, label:5
+video 849 done, total 850/959, average 0.4727234708561617 sec/video
+video #850, pred:5, label:5
+video 850 done, total 851/959, average 0.474145005368458 sec/video
+video #851, pred:3, label:3
+video 851 done, total 852/959, average 0.4737078415955736 sec/video
+video #852, pred:5, label:5
+video 852 done, total 853/959, average 0.4732604792640749 sec/video
+video #853, pred:1, label:1
+video 853 done, total 854/959, average 0.47281838635929296 sec/video
+video #854, pred:0, label:0
+video 854 done, total 855/959, average 0.4737406635842128 sec/video
+video #855, pred:5, label:5
+video 855 done, total 856/959, average 0.47329405117257733 sec/video
+video #856, pred:5, label:5
+video 856 done, total 857/959, average 0.47283633614921794 sec/video
+video #857, pred:5, label:5
+video 857 done, total 858/959, average 0.4724182746349237 sec/video
+video #858, pred:3, label:3
+video 858 done, total 859/959, average 0.47390759893290796 sec/video
+video #859, pred:5, label:5
+video 859 done, total 860/959, average 0.4734850057335787 sec/video
+video #860, pred:5, label:5
+video 860 done, total 861/959, average 0.47304618538602855 sec/video
+video #861, pred:5, label:5
+video 861 done, total 862/959, average 0.47260622303336514 sec/video
+video #862, pred:3, label:3
+video 862 done, total 863/959, average 0.4735187486867363 sec/video
+video #863, pred:3, label:3
+video 863 done, total 864/959, average 0.4731284589679153 sec/video
+video #864, pred:5, label:5
+video 864 done, total 865/959, average 0.47292330030761015 sec/video
+video #865, pred:5, label:5
+video 865 done, total 866/959, average 0.47251156956714513 sec/video
+video #866, pred:5, label:5
+video 866 done, total 867/959, average 0.4735551532164577 sec/video
+video #867, pred:2, label:2
+video 867 done, total 868/959, average 0.4731100253795149 sec/video
+video #868, pred:5, label:5
+video 868 done, total 869/959, average 0.4726700371236329 sec/video
+video #869, pred:2, label:2
+video 869 done, total 870/959, average 0.4722264158314672 sec/video
+video #870, pred:5, label:5
+video 870 done, total 871/959, average 0.47314544194875163 sec/video
+video #871, pred:5, label:2
+video 871 done, total 872/959, average 0.47270094200011786 sec/video
+video #872, pred:5, label:5
+video 872 done, total 873/959, average 0.472504328479745 sec/video
+video #873, pred:4, label:4
+video 873 done, total 874/959, average 0.4720711620776004 sec/video
+video #874, pred:5, label:5
+video 874 done, total 875/959, average 0.4729323422568185 sec/video
+video #875, pred:5, label:5
+video 875 done, total 876/959, average 0.4725097692720422 sec/video
+video #876, pred:5, label:5
+video 876 done, total 877/959, average 0.47214497726075055 sec/video
+video #877, pred:5, label:5
+video 877 done, total 878/959, average 0.47172507120970986 sec/video
+video #878, pred:5, label:5
+video 878 done, total 879/959, average 0.474530939356052 sec/video
+video #879, pred:5, label:5
+video 879 done, total 880/959, average 0.4741323013197292 sec/video
+video #880, pred:5, label:5
+video 880 done, total 881/959, average 0.4736926368903897 sec/video
+video #881, pred:5, label:5
+video 881 done, total 882/959, average 0.47328157354644634 sec/video
+video #882, pred:0, label:0
+video 882 done, total 883/959, average 0.4742449364062749 sec/video
+video #883, pred:5, label:5
+video 883 done, total 884/959, average 0.4738063860802629 sec/video
+video #884, pred:2, label:2
+video 884 done, total 885/959, average 0.4733721646885414 sec/video
+video #885, pred:4, label:4
+video 885 done, total 886/959, average 0.4729326196502617 sec/video
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x38b6940] moov atom not found
+VIDIOC_REQBUFS: Inappropriate ioctl for device
+video #886, pred:5, label:5
+video 886 done, total 887/959, average 0.47410408915634755 sec/video
+video #887, pred:5, label:5
+video 887 done, total 888/959, average 0.47367027670413525 sec/video
+video #888, pred:5, label:5
+video 888 done, total 889/959, average 0.47366728047820394 sec/video
+video #889, pred:5, label:5
+video 889 done, total 890/959, average 0.47324120435821876 sec/video
+video #890, pred:5, label:5
+video 890 done, total 891/959, average 0.47580928567015096 sec/video
+video #891, pred:4, label:2
+video 891 done, total 892/959, average 0.4753650434883186 sec/video
+video #892, pred:5, label:5
+video 892 done, total 893/959, average 0.4749221865834474 sec/video
+video #893, pred:4, label:4
+video 893 done, total 894/959, average 0.47449536318213614 sec/video
+video #894, pred:5, label:5
+video 894 done, total 895/959, average 0.4754611396256772 sec/video
+video #895, pred:5, label:5
+video 895 done, total 896/959, average 0.4750224905354636 sec/video
+video #896, pred:5, label:5
+video 896 done, total 897/959, average 0.4746484716600399 sec/video
+video #897, pred:0, label:0
+video 897 done, total 898/959, average 0.4742347108229231 sec/video
+video #898, pred:5, label:5
+video 898 done, total 899/959, average 0.4751804063264467 sec/video
+video #899, pred:5, label:5
+video 899 done, total 900/959, average 0.47475680377748275 sec/video
+video #900, pred:5, label:5
+video 900 done, total 901/959, average 0.47433457522757444 sec/video
+video #901, pred:5, label:5
+video 901 done, total 902/959, average 0.47390160724487645 sec/video
+video #902, pred:5, label:5
+video 902 done, total 903/959, average 0.47492048563487244 sec/video
+video #903, pred:5, label:5
+video 903 done, total 904/959, average 0.4744873060061868 sec/video
+video #904, pred:5, label:5
+video 904 done, total 905/959, average 0.4740528968157689 sec/video
+video #905, pred:0, label:2
+video 905 done, total 906/959, average 0.473620402365594 sec/video
+video #906, pred:2, label:2
+video 906 done, total 907/959, average 0.47483967236410557 sec/video
+video #907, pred:5, label:5
+video 907 done, total 908/959, average 0.4744393731003816 sec/video
+video #908, pred:5, label:5
+video 908 done, total 909/959, average 0.47403651600492536 sec/video
+video #909, pred:5, label:5
+video 909 done, total 910/959, average 0.47364445964058677 sec/video
+video #910, pred:3, label:3
+video 910 done, total 911/959, average 0.4746878026738256 sec/video
+video #911, pred:3, label:5
+video 911 done, total 912/959, average 0.47427081146783995 sec/video
+video #912, pred:4, label:4
+video 912 done, total 913/959, average 0.4739117248948798 sec/video
+video #913, pred:4, label:4
+video 913 done, total 914/959, average 0.4735171067114732 sec/video
+video #914, pred:5, label:5
+video 914 done, total 915/959, average 0.47454156823497 sec/video
+video #915, pred:0, label:0
+video 915 done, total 916/959, average 0.47412711564109833 sec/video
+video #916, pred:5, label:5
+video 916 done, total 917/959, average 0.4737065667804481 sec/video
+video #917, pred:5, label:5
+video 917 done, total 918/959, average 0.4732942939583772 sec/video
+video #918, pred:2, label:2
+video 918 done, total 919/959, average 0.4742726965749614 sec/video
+video #919, pred:5, label:4
+video 919 done, total 920/959, average 0.47388136879257536 sec/video
+video #920, pred:4, label:4
+video 920 done, total 921/959, average 0.47346395519476114 sec/video
+video #921, pred:2, label:2
+video 921 done, total 922/959, average 0.473036880606943 sec/video
+video #922, pred:5, label:5
+video 922 done, total 923/959, average 0.47424953807859743 sec/video
+video #923, pred:5, label:3
+video 923 done, total 924/959, average 0.473831612568397 sec/video
+video #924, pred:5, label:5
+video 924 done, total 925/959, average 0.47344644649608714 sec/video
+video #925, pred:2, label:2
+video 925 done, total 926/959, average 0.47302692214562103 sec/video
+video #926, pred:5, label:5
+video 926 done, total 927/959, average 0.4743092155250788 sec/video
+video #927, pred:2, label:2
+video 927 done, total 928/959, average 0.47389987856149673 sec/video
+video #928, pred:2, label:2
+video 928 done, total 929/959, average 0.47349245940907525 sec/video
+video #929, pred:5, label:5
+video 929 done, total 930/959, average 0.47312345402215117 sec/video
+video #930, pred:5, label:5
+video 930 done, total 931/959, average 0.47424425884168975 sec/video
+video #931, pred:5, label:3
+video 931 done, total 932/959, average 0.47382109743331124 sec/video
+video #932, pred:5, label:3
+video 932 done, total 933/959, average 0.47340533511048344 sec/video
+video #933, pred:2, label:2
+video 933 done, total 934/959, average 0.4729953971103121 sec/video
+video #934, pred:2, label:2
+video 934 done, total 935/959, average 0.47398021157412606 sec/video
+video #935, pred:5, label:5
+video 935 done, total 936/959, average 0.4735691743528741 sec/video
+video #936, pred:5, label:3
+video 936 done, total 937/959, average 0.4731564323319442 sec/video
+video #937, pred:3, label:5
+video 937 done, total 938/959, average 0.4727370540724634 sec/video
+video #938, pred:5, label:5
+video 938 done, total 939/959, average 0.47377452936670145 sec/video
+video #939, pred:5, label:5
+video 939 done, total 940/959, average 0.4733679966723665 sec/video
+video #940, pred:0, label:0
+video 940 done, total 941/959, average 0.47295173220376024 sec/video
+video #941, pred:5, label:5
+video 941 done, total 942/959, average 0.47253508147666917 sec/video
+video #942, pred:5, label:5
+video 942 done, total 943/959, average 0.4736218472680004 sec/video
+video #943, pred:1, label:1
+video 943 done, total 944/959, average 0.47320600561166215 sec/video
+video #944, pred:5, label:5
+video 944 done, total 945/959, average 0.47279474117137765 sec/video
+video #945, pred:2, label:2
+video 945 done, total 946/959, average 0.47243678267359984 sec/video
+video #946, pred:4, label:4
+video 946 done, total 947/959, average 0.4736145484283834 sec/video
+video #947, pred:5, label:5
+video 947 done, total 948/959, average 0.47320134906326167 sec/video
+video #948, pred:5, label:5
+video 948 done, total 949/959, average 0.4727978389808325 sec/video
+video #949, pred:5, label:5
+video 949 done, total 950/959, average 0.47240192789780466 sec/video
+video #950, pred:5, label:5
+video 950 done, total 951/959, average 0.4736237011998735 sec/video
+video #951, pred:3, label:3
+video 951 done, total 952/959, average 0.4732103588200417 sec/video
+video #952, pred:5, label:5
+video 952 done, total 953/959, average 0.4728122425479629 sec/video
+video #953, pred:2, label:2
+video 953 done, total 954/959, average 0.47242655019340274 sec/video
+video #954, pred:5, label:5
+video 954 done, total 955/959, average 0.4734955842582343 sec/video
+video #955, pred:0, label:0
+video 955 done, total 956/959, average 0.4731055286140123 sec/video
+video #956, pred:5, label:5
+video 956 done, total 957/959, average 0.47317880672347207 sec/video
+video #957, pred:5, label:5
+video 957 done, total 958/959, average 0.472770587636434 sec/video
+video #958, pred:3, label:3
+video 958 done, total 959/959, average 0.4730776949893446 sec/video
+Video-level Accuracy 90.41%
+Label-level Recall 83.31%
+[0.80555556 0.8        0.85620915 0.66176471 0.91566265 0.95950704]
+Label-level Accuracy 86.78%
+[0.87878788 0.8        0.85064935 0.83333333 0.91566265 0.92844974]
+Confusion Matrix:
+[[ 58.   1.   8.   0.   0.   5.]
+ [  1.  12.   1.   0.   0.   1.]
+ [  7.   2. 131.   0.   3.  10.]
+ [  0.   0.   3.  45.   0.  20.]
+ [  0.   0.   1.   0.  76.   6.]
+ [  0.   0.  10.   9.   4. 545.]]
