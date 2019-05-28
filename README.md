@@ -39,7 +39,7 @@ Pytorch版TSN共支持四种数据输入格式。**图片，帧，视频采用op
 
 ### Training
 
-1. 使用RGB数据进行训练：其中input_data_type可选Image，Frames，Video；当input_data_type为Video时，video_handler可选nvvl，cv2。
+1. 使用RGB数据进行训练：其中input_data_type可选Image，Frames，Video；当input_data_type为Video时，video_handler可选nvvl，cv2。参考script。
 
 ```python
 python main.py <num_of_class> RGB <rgb_train_list> <rgb_val_list> \
