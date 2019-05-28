@@ -1,0 +1,30 @@
+
+Initializing TSN with base model: resnet50.
+TSN Configurations:
+    input_modality:     RGB
+    num_segments:       3
+    new_length:         1
+    consensus_module:   avg
+    dropout_ratio:      0.8
+    use_partial_bn:     False
+    use_group_norm:     False
+        
+/workspace/mnt/group/algorithm/kanghaidong/video_project/Alg-VideoAlgorithm-dev/video-classification/tsn-pytorch/models.py:97: UserWarning: nn.init.normal is now deprecated in favor of nn.init.normal_.
+  normal(self.new_fc.weight, 0, std)
+/workspace/mnt/group/algorithm/kanghaidong/video_project/Alg-VideoAlgorithm-dev/video-classification/tsn-pytorch/models.py:98: UserWarning: nn.init.constant is now deprecated in favor of nn.init.constant_.
+  constant(self.new_fc.bias, 0)
+=> loading checkpoint '/workspace/mnt/group/algorithm/kanghaidong/video_project/Alg-VideoAlgorithm-dev/video-classification/tsn-pytorch/resnet50_80e_69.98p.pth.tar'
+=> loaded checkpoint '/workspace/mnt/group/algorithm/kanghaidong/video_project/Alg-VideoAlgorithm-dev/video-classification/tsn-pytorch/resnet50_80e_69.98p.pth.tar' (epoch 80)
+/usr/local/lib/python3.5/dist-packages/torchvision/transforms/transforms.py:208: UserWarning: The use of the transforms.Scale transform is deprecated, please use transforms.Resize instead.
+  "please use transforms.Resize instead.")
+the length of list_file 118
+the length of video_list 12294
+the length of list_file 104
+the length of video_list 959
+group: first_conv_weight has 1 params, lr_mult: 1, decay_mult: 1
+group: first_conv_bias has 0 params, lr_mult: 2, decay_mult: 0
+group: normal_weight has 53 params, lr_mult: 1, decay_mult: 1
+group: normal_bias has 1 params, lr_mult: 2, decay_mult: 0
+group: BN scale/shift has 106 params, lr_mult: 1, decay_mult: 0
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x3943140] moov atom not found
+VIDIOC_REQBUFS: Inappropriate ioctl for device

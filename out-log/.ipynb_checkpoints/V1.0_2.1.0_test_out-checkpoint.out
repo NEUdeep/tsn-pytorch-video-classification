@@ -1,0 +1,5 @@
+usage: test_models.py [-h] [--input_type {Image,Frames,Video}] [--video_handler {nvvl,cv2}] [--arch ARCH] [--save_scores SAVE_SCORES] [--num_segments NUM_SEGMENTS] [--max_num MAX_NUM]
+                      [--test_crops TEST_CROPS] [--input_size INPUT_SIZE] [--crop_fusion_type {avg,max,topk}] [--k K] [--dropout DROPOUT] [-j N] [--gpus GPUS [GPUS ...]]
+                      [--flow_prefix FLOW_PREFIX]
+                      num_class {RGB,Flow,RGBDiff} test_list weights
+test_models.py: error: unrecognized arguments: --weights
