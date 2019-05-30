@@ -12,6 +12,7 @@ MODEL:
   epoch: 80
   resume: /workspace/mnt/group/algorithm/kanghaidong/video_project/Alg-VideoAlgorithm-dev/video-classification/tsn-pytorch/resnet50_80e_69.98p.pth.tar
   batch_size: 128
+  consenus_type: avg
   
 opt:
   lr: 0.01
