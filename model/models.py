@@ -162,15 +162,15 @@ TSN Configurations:
             self.input_mean =  [124. / 255, 117. / 255, 104. / 255]
             self.input_std = [1 / (.0167 * 255)] * 3
         elif 'resnext101' in base_model:
-            import pytorch_model_zoo
-            self.base_model = getattr(pytorch_model_zoo, base_model)()
+            from poseidon.models import resnext
+            self.base_model = getattr(resnext, base_model)()
             self.base_model.last_layer_name = 'last_linear'
             self.input_size = 224
             self.input_mean = [0.485, 0.456, 0.406]
             self.input_std = [0.229, 0.224, 0.225]
         elif 'xception' in base_model:
-            import pytorch_model_zoo
-            self.base_model = getattr(pytorch_model_zoo, base_model)()
+            import poseidon.models
+            self.base_model = getattr(poseidon.models, base_model)()
             self.base_model.last_layer_name = 'fc'
             self.input_size = 299
             self.input_mean = [0.5]
