@@ -1,8 +1,3 @@
-# --------------------------------------------------------
-# Copyright (c) 2019 
-# Written by Kang Haidong
-# --------------------------------------------------------
-
 import argparse
 import time
 
@@ -21,104 +16,87 @@ except RuntimeError:
     pass
 
 if __name__ == '__main__':
+
     # options
     parser = argparse.ArgumentParser(
         description="Standard video-level testing")
-    parser.add_argument('num_class', type=int)
-    parser.add_argument('modality', type=str, choices=['RGB', 'Flow', 'RGBDiff'])
-    parser.add_argument('test_list', type=str)
-    parser.add_argument('weights', type=str)
-    parser.add_argument('--input_type', type=str, default='Frames', choices=['Image','Frames','Video'])
-    parser.add_argument('--video_handler',type=str, default='nvvl', choices=['nvvl','cv2'])
-    parser.add_argument('--arch', type=str, default="resnet101")
-    parser.add_argument('--save_scores', type=str, default=None)
-    parser.add_argument('--num_segments', type=int, default=25)
-    parser.add_argument('--max_num', type=int, default=-1)
-    parser.add_argument('--test_crops', type=int, default=10)
-    parser.add_argument('--input_size', type=int, default=224)
-    parser.add_argument('--crop_fusion_type', type=str, default='avg',
-                        choices=['avg', 'max', 'topk'])
-    parser.add_argument('--k', type=int, default=3)
-    parser.add_argument('--dropout', type=float, default=0.7)
-    parser.add_argument('-j', '--workers', default=4, type=int, metavar='N',
-                        help='number of data loading workers (default: 4)')
-    parser.add_argument('--gpus', nargs='+', type=int, default=None)
-    parser.add_argument('--flow_prefix', type=str, default='')
-
+    parser.add_argument('--cfg', dest='cfg_file', help='optional config file',
+                    default='./configs/V1.0_test.yml', type=str)
+    from config import cfg, cfg_from_file
     args = parser.parse_args()
-
-
-    net = TSN(args.num_class, 1, args.modality,
-              base_model=args.arch,
-              consensus_type=args.crop_fusion_type,
-              dropout=args.dropout)
+    if args.cfg_file is not None:
+        cfg_from_file(args.cfg_file)
+    
+    net = TSN(args.DATA.num_class, 1, args.DATA.modality,
+              base_model=args.MODEL.arch,
+              consensus_type=args.MODEL.consenus_type,
+              dropout=args.OPT.dropout)
 
     scale_size = net.scale_size
     input_size = net.input_size
     input_mean = net.input_mean
     input_std = net.input_std
 
-    net= torch.nn.DataParallel(net, device_ids=args.gpus).cuda()
+    net= torch.nn.DataParallel(net, device_ids=args.RUN.gpus).cuda()
 
-    checkpoint = torch.load(args.weights)
+    checkpoint = torch.load(args.TEST.weights)
     print("model epoch {} best prec@1: {}".format(checkpoint['epoch'], checkpoint['best_prec1']))
     net.load_state_dict(checkpoint['state_dict'])
 
-    if args.test_crops == 1:
+    if args.TEST.test_crops == 1:
         cropping = torchvision.transforms.Compose([
             GroupScale(scale_size),
             GroupCenterCrop(input_size),
         ])
-    elif args.test_crops == 10:
+    elif args.TEST.test_crops == 10:
         cropping = torchvision.transforms.Compose([
             GroupOverSample(input_size, scale_size)
         ])
     else:
-        raise ValueError("Only 1 and 10 crops are supported while we got {}".format(args.test_crops))
+        raise ValueError("Only 1 and 10 crops are supported while we got {}".format(args.TEST.test_crops))
 
     test_transform = torchvision.transforms.Compose([
                                cropping,
-                               Stack(roll=args.arch == 'BNInception'),
-                               ToTorchFormatTensor(div=args.arch != 'BNInception'),
+                               Stack(roll=args.MODEL.arch == 'BNInception'),
+                               ToTorchFormatTensor(div=args.MODEL.arch != 'BNInception'),
                                GroupNormalize(input_mean, input_std)])
-
-    if args.input_type == 'Frames':
+    if args.DATA.input_type == 'Frames':
         from dataset_frames import TSNDataSetFrames
         data_loader = torch.utils.data.DataLoader(
-            TSNDataSetFrames(args.test_list, num_segments=args.num_segments,
-                       new_length=1 if args.modality == "RGB" else 5,
-                       modality=args.modality, test_mode=True,
-                       image_tmpl="image_{:05d}.jpg" if args.modality in ["RGB", "RGBDiff"] else args.flow_prefix+"{}_{:05d}.jpg",
+            TSNDataSetFrames(args.DATA.test_list, num_segments=args.num_segments,
+                       new_length=1 if args.DATA.modality == "RGB" else 5,
+                       modality=args.DATA.modality, test_mode=True,
+                       image_tmpl="image_{:05d}.jpg" if args.DATA.modality in ["RGB", "RGBDiff"] else args.RUN.flow_prefix+"{}_{:05d}.jpg",
                        transform=test_transform),
             batch_size=1, shuffle=False,
-            num_workers=args.workers, pin_memory=True)
-    elif args.input_type == 'Image':
+            num_workers=args.RUN.workers, pin_memory=True)
+    elif args.DATA.input_type == 'Image':
         from dataset_image import TSNDataSetImage
         data_loader = torch.utils.data.DataLoader(
-            TSNDataSetImage(args.test_list,
+            TSNDataSetImage(args.DATA.test_list,
                             transform=test_transform),
             batch_size=1, shuffle=False,
-            num_workers=args.workers, pin_memory=True)
-    elif args.input_type == 'Video':
-        if args.video_handler == 'nvvl':
+            num_workers=args.RUN.workers, pin_memory=True)
+    elif args.DATA.input_type == 'Video':
+        if args.DATA.video_handler == 'nvvl':
             from dataset_video_nvvl import TSNDataSetVideoNVVL
-            test_data_set = TSNDataSetVideoNVVL(args.test_list, num_segments=args.num_segments,
+            test_data_set = TSNDataSetVideoNVVL(args.DATA.test_list, num_segments=args.MODEL.num_segments,
                                             new_length=1,
-                                            modality=args.modality,
+                                            modality=args.DATA.modality,
                                             transform=test_transform)
             data_loader = torch.utils.data.DataLoader(
                 test_data_set,
                 batch_size=1, shuffle=False,
-                num_workers=args.workers, pin_memory=True, worker_init_fn=test_data_set.set_video_reader)
-        elif args.video_handler == 'cv2':
+                num_workers=args.RUN.workers, pin_memory=True, worker_init_fn=test_data_set.set_video_reader)
+        elif args.DATA.video_handler == 'cv2':
             from dataset_video_cv2 import TSNDataSetVideoCV2
             data_loader = torch.utils.data.DataLoader(
-                TSNDataSetVideoCV2(args.test_list, num_segments=args.num_segments,
+                TSNDataSetVideoCV2(args.DATA.test_list, num_segments=args.MODEL.num_segments,
                                    new_length=1,
-                                   modality=args.modality,
+                                   modality=args.DATA.modality,
                                    transform=test_transform),
                 batch_size=1, shuffle=False,
-                num_workers=args.workers, pin_memory=True)
+                num_workers=args.RUN.workers, pin_memory=True)
 
     net.eval()
     data_gen = enumerate(data_loader)
@@ -130,14 +108,14 @@ if __name__ == '__main__':
     def eval_video(video_data):
         i, data, label = video_data
 
-        if args.modality == 'RGB':
+        if args.DATA.modality == 'RGB':
             length = 3
-        elif args.modality == 'Flow':
+        elif args.DATA.modality == 'Flow':
             length = 10
-        elif args.modality == 'RGBDiff':
+        elif args.DATA.modality == 'RGBDiff':
             length = 18
         else:
-            raise ValueError("Unknown modality "+args.modality)
+            raise ValueError("Unknown modality "+args.DATA.modality)
 
         input_var = torch.autograd.Variable(data.view(-1, length, data.size(2), data.size(3)),
                                             volatile=True)
@@ -148,7 +126,7 @@ if __name__ == '__main__':
 
 
     proc_start_time = time.time()
-    max_num = args.max_num if args.max_num > 0 else len(data_loader.dataset)
+    max_num = args.TEST.max_num if args.TEST.max_num > 0 else len(data_loader.dataset)
 
     for i, (data, label) in data_gen:
         if i >= max_num:
@@ -185,7 +163,8 @@ if __name__ == '__main__':
     print('Confusion Matrix:')
     print(cf)
 
-    if args.save_scores is not None:
-        np.savez(args.save_scores, scores=video_scores, labels=video_labels)
+    if args.TEST.save_scores is not None:
+        np.savez(args.TEST.save_scores, scores=video_scores, labels=video_labels)
+
 
 

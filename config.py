@@ -42,9 +42,10 @@ __C.MODEL.start_epoch = 0 # manual epoch number (useful on resume)
 __C.MODEL.resume = '' # path to latest checkpoint(default: 4)
 __C.MODEL.kinetics_pretrained = 'True' # use kinetics model as pretrained model, use with resume
 __C.MODEL.use_partialbn = False # partialbn
-__C.MODEL.batch_size = 125 # mini-batch size (default: 256)
+__C.MODEL.batch_size = 128 # mini-batch size (default: 256)
 __C.MODEL.ckpt = 'ckpt/V1.0/rensnet50/' # path to save checkpoint
 __C.MODEL.loss_type = 'nll' # the type of loss, etc. choices=['nll']
+__C.MODEL.gd = 20
 #
 # Optimizer options
 #
@@ -69,10 +70,10 @@ __C.MC.eval_freq = 5 # evaluation frequency (default: 5)
 #
 __C.RUN = edict()
 __C.RUN.e = ''  # evaluate model on validation set
-__C.RUN.snapshot_pref = ""
+__C.RUN.snapshot_pref = "bk-V1.0_2.1.5_resnet50_"
 __C.RUN.gpus = 'None'
 __C.RUN.flow_prefix = ""
-__C.RUN.workers = 4  # number of data loading workers
+__C.RUN.workers = 8  # number of data loading workers
 __C.RUN.evaluate = 'True' # evaluate model on validation set
 #
 # logger options

@@ -28,6 +28,11 @@ best_prec1 = 0
 
 
 def main():
+    # options
+    parser = argparse.ArgumentParser(
+        description="Standard video-level train")
+    parser.add_argument('--cfg', dest='cfg_file', help='optional config file',
+                    default='./configs/V1.0_train.yml', type=str)
     from config import cfg, cfg_from_file
     global args, best_prec1
     args = parser.parse_args()

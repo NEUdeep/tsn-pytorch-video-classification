@@ -22,7 +22,7 @@ from transforms import *
 parser = argparse.ArgumentParser(
         description="Standard video-level testing")
 parser.add_argument('--cfg', dest='cfg_file', help='optional config file',
-                    default='./cfgs/imagenet/res18.yml', type=str)
+                    default='./configs/V1.0_test.yml', type=str)
 from config import cfg, cfg_from_file
 args = parser.parse_args()
 if args.cfg_file is not None:
