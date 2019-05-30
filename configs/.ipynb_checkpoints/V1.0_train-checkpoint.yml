@@ -1,0 +1,24 @@
+DATA:
+  num_class: 6
+  modality: RGB
+  train_list: /workspace/mnt/group/algorithm/kanghaidong/video_project/Video1.0_list_file/bk-video-list-V1.0-a-train.txt
+  val_list: /workspace/mnt/group/algorithm/kanghaidong/video_project/Video1.0_list_file/bk-video-list-V1.0-a-val.txt
+  input_type: video
+  video_handler: cv2
+MODEL:
+  arch: resnet50
+  num_segments: 3
+  gd: 20
+  epoch: 80
+  resume: /workspace/mnt/group/algorithm/kanghaidong/video_project/Alg-VideoAlgorithm-dev/video-classification/tsn-pytorch/resnet50_80e_69.98p.pth.tar
+  batch_size: 128
+  
+opt:
+  lr: 0.01
+  lr_steps: 30 60
+  dropout: 0.8
+  mixup: 0.8
+RUN:
+  snapshot_pref: bk-V1.0_2.1.5_resnet50_
+  workers: 8
+
