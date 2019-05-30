@@ -1,3 +1,7 @@
+# --------------------------------------------------------
+# Copyright (c) 2019 
+# Written by Kang Haidong
+# --------------------------------------------------------
 import os
 import time
 import shutil
@@ -24,13 +28,17 @@ best_prec1 = 0
 
 
 def main():
+    from config import cfg, cfg_from_file
     global args, best_prec1
     args = parser.parse_args()
+    if args.cfg_from_file is not None:
+        cfg_from_file(args.cfg_file)
+        
 
 
-    model = TSN(args.num_class, args.num_segments, args.modality,
-                base_model=args.arch,
-                consensus_type=args.consensus_type, dropout=args.dropout, partial_bn=args.use_partialbn, use_GN=args.use_gn)
+    model = TSN(args.DATA.num_class, args.MODEL.num_segments, args.DATA.modality,
+                base_model=args.MODEL.arch,
+                consensus_type=args.MODEL.consensus_type, dropout=args.OPT.dropout, partial_bn=args.MODEL.use_partialbn, use_GN=args.OPT.use_gn)
 
     crop_size = model.crop_size
     scale_size = model.scale_size
@@ -39,18 +47,18 @@ def main():
     policies = model.get_optim_policies()
     train_augmentation = model.get_augmentation(vgg_style=False)
 
-    model = torch.nn.DataParallel(model, device_ids=args.gpus).cuda()
+    model = torch.nn.DataParallel(model, device_ids=args.RUN.gpus).cuda()
 
-    if args.gpus is None:
+    if args.RUN.gpus is None:
         GPU_num = torch.cuda.device_count()
     else:
-        GPU_num = len(args.gpus)
+        GPU_num = len(args.RUN.gpus)
 
-    if args.resume:
-        if os.path.isfile(args.resume):
-            print(("=> loading checkpoint '{}'".format(args.resume)))
-            checkpoint = torch.load(args.resume)
-            if args.kinetics_pretrained:
+    if args.MODEL.resume:
+        if os.path.isfile(args.MODEL.resume):
+            print(("=> loading checkpoint '{}'".format(args.MODEL.resume)))
+            checkpoint = torch.load(args.MODEL.resume)
+            if args.MODEL.kinetics_pretrained:
                 pretrained_state = checkpoint['state_dict']
                 del pretrained_state['module.new_fc.weight']
                 del pretrained_state['module.new_fc.bias']
@@ -58,113 +66,113 @@ def main():
                 model_state.update(pretrained_state)
                 model.load_state_dict(model_state)
             else:
-                args.start_epoch = checkpoint['epoch']
+                args.MODEL.start_epoch = checkpoint['epoch']
                 best_prec1 = checkpoint['best_prec1']
                 model.load_state_dict(checkpoint['state_dict'])
             print(("=> loaded checkpoint '{}' (epoch {})"
-                .format(args.resume, checkpoint['epoch'])))
+                .format(args.MODEL.resume, checkpoint['epoch'])))
         else:
-            print(("=> no checkpoint found at '{}'".format(args.resume)))
+            print(("=> no checkpoint found at '{}'".format(args.MODEL.resume)))
 
     cudnn.benchmark = True
 
     # Data loading code
-    if args.modality != 'RGBDiff':
+    if args.DATA.modality != 'RGBDiff':
         normalize = GroupNormalize(input_mean, input_std)
     else:
         normalize = IdentityTransform()
     train_transform = torchvision.transforms.Compose([
         train_augmentation,
-        Stack(roll=args.arch == 'BNInception'),
-        ToTorchFormatTensor(div=args.arch != 'BNInception'),
+        Stack(roll=args.MODEL.arch == 'BNInception'),
+        ToTorchFormatTensor(div=args.MODEL.arch != 'BNInception'),
         normalize,
     ])
     val_transform = torchvision.transforms.Compose([
         GroupScale(int(scale_size)),
         GroupCenterCrop(crop_size),
-        Stack(roll=args.arch == 'BNInception'),
-        ToTorchFormatTensor(div=args.arch != 'BNInception'),
+        Stack(roll=args.MODEL.arch == 'BNInception'),
+        ToTorchFormatTensor(div=args.MODEL.arch != 'BNInception'),
         normalize,
     ])
 
-    if args.modality == 'RGB':
+    if args.DATA.modality == 'RGB':
         data_length = 1
-    elif args.modality in ['Flow', 'RGBDiff']:
+    elif args.DATA.modality in ['Flow', 'RGBDiff']:
         data_length = 5
 
-    if args.input_type == 'Frames':
+    if args.DATA.input_type == 'Frames':
         from dataset_frames import TSNDataSetFrames
         train_loader = torch.utils.data.DataLoader(
-            TSNDataSetFrames(args.train_list, num_segments=args.num_segments,
+            TSNDataSetFrames(args.DATA.train_list, num_segments=args.MODEL.num_segments,
                        new_length=data_length,
-                       modality=args.modality,
-                       image_tmpl="image_{:05d}.jpg" if args.modality in ["RGB", "RGBDiff"] else args.flow_prefix+"{}_{:05d}.jpg",
+                       modality=args.DATA.modality,
+                       image_tmpl="image_{:05d}.jpg" if args.DATA.modality in ["RGB", "RGBDiff"] else args.RUN.flow_prefix+"{}_{:05d}.jpg",
                        transform=train_transform),
-            batch_size=args.batch_size, shuffle=True,
-            num_workers=args.workers, pin_memory=True)
+            batch_size=args.MODEL.batch_size, shuffle=True,
+            num_workers=args.RUN.workers, pin_memory=True)
         val_loader = torch.utils.data.DataLoader(
-            TSNDataSetFrames(args.val_list, num_segments=args.num_segments,
+            TSNDataSetFrames(args.DATA.val_list, num_segments=args.MODEL.num_segments,
                              new_length=data_length,
-                             modality=args.modality,
-                             image_tmpl="image_{:05d}.jpg" if args.modality in ["RGB",
-                                                                                "RGBDiff"] else args.flow_prefix + "{}_{:05d}.jpg",
+                             modality=args.DATA.modality,
+                             image_tmpl="image_{:05d}.jpg" if args.DATA.modality in ["RGB",
+                                                                                "RGBDiff"] else args.RUN.flow_prefix + "{}_{:05d}.jpg",
                              random_shift=False,
                              transform=val_transform),
-            batch_size=int(args.batch_size/GPU_num), shuffle=False,
-            num_workers=args.workers, pin_memory=True)
-    elif args.input_type == 'Image':
+            batch_size=int(args.MODEL.batch_size/GPU_num), shuffle=False,
+            num_workers=args.RUN.workers, pin_memory=True)
+    elif args.DATA.input_type == 'Image':
         from dataset_image import TSNDataSetImage
         train_loader = torch.utils.data.DataLoader(
-            TSNDataSetImage(args.train_list,
+            TSNDataSetImage(args.DATA.train_list,
                             transform=train_transform),
-            batch_size=args.batch_size * args.num_segments, shuffle=True,
-            num_workers=args.workers, pin_memory=True)
+            batch_size=args.MODEL.batch_size * args.MODEL.num_segments, shuffle=True,
+            num_workers=args.RUN.workers, pin_memory=True)
         val_loader = torch.utils.data.DataLoader(
-            TSNDataSetImage(args.val_list,
+            TSNDataSetImage(args.DATA.val_list,
                             transform=val_transform),
-            batch_size=int(args.batch_size * args.num_segments/GPU_num), shuffle=True,
-            num_workers=args.workers, pin_memory=True)
-    elif args.input_type == 'Video':
-        if args.video_handler == 'nvvl':
+            batch_size=int(args.MODEL.batch_size * args.MODEL.num_segments/GPU_num), shuffle=True,
+            num_workers=args.RUN.workers, pin_memory=True)
+    elif args.DATA.input_type == 'Video':
+        if args.DATA.video_handler == 'nvvl':
             from dataset_video_nvvl import TSNDataSetVideoNVVL
-            train_data_set = TSNDataSetVideoNVVL(args.train_list, num_segments=args.num_segments,
+            train_data_set = TSNDataSetVideoNVVL(args.DATA.train_list, num_segments=args.MODEL.num_segments,
                                             new_length=data_length,
-                                            modality=args.modality,
+                                            modality=args.DATA.modality,
                                             transform=train_transform)
             train_loader = torch.utils.data.DataLoader(
                 train_data_set,
-                batch_size=args.batch_size, shuffle=True, timeout=300,
-                num_workers=args.workers, pin_memory=True, worker_init_fn=train_data_set.set_video_reader)
-            val_data_set = TSNDataSetVideoNVVL(args.val_list, num_segments=args.num_segments,
+                batch_size=args.MODEL.batch_size, shuffle=True, timeout=300,
+                num_workers=args.RUN.workers, pin_memory=True, worker_init_fn=train_data_set.set_video_reader)
+            val_data_set = TSNDataSetVideoNVVL(args.DATA.val_list, num_segments=args.MODEL.num_segments,
                                           new_length=data_length,
-                                          modality=args.modality,
+                                          modality=args.DATA.modality,
                                           random_shift=False,
                                           transform=val_transform)
             val_loader = torch.utils.data.DataLoader(
                 val_data_set,
-                batch_size=int(args.batch_size/GPU_num), shuffle=False, timeout=300,
-                num_workers=args.workers, pin_memory=True, worker_init_fn=val_data_set.set_video_reader)
-        elif args.video_handler == 'cv2':# cv2,dataload
+                batch_size=int(args.MODEL.batch_size/GPU_num), shuffle=False, timeout=300,
+                num_workers=args.RUN.workers, pin_memory=True, worker_init_fn=val_data_set.set_video_reader)
+        elif args.DATA.video_handler == 'cv2':# cv2,dataload
             from dataset_video_cv2 import TSNDataSetVideoCV2
             train_loader = torch.utils.data.DataLoader(
-                TSNDataSetVideoCV2(args.train_list, num_segments=args.num_segments,#args.train_list
+                TSNDataSetVideoCV2(args.DATA.train_list, num_segments=args.num_segments,#args.DATA.train_list
                                    new_length=data_length,
-                                   modality=args.modality,
+                                   modality=args.DATA.modality,
                                    transform=train_transform),
-                batch_size=args.batch_size, shuffle=True,
-                num_workers=args.workers, pin_memory=True)
+                batch_size=args.MODEL.batch_size, shuffle=True,
+                num_workers=args.RUN.workers, pin_memory=True)
             val_loader = torch.utils.data.DataLoader(
-                TSNDataSetVideoCV2(args.val_list, num_segments=args.num_segments,
+                TSNDataSetVideoCV2(args.DATA.val_list, num_segments=args.MODEL.num_segments,
                                    new_length=data_length,
-                                   modality=args.modality,
+                                   modality=args.DATA.modality,
                                    random_shift=False,
                                    transform=val_transform),
-                batch_size=int(args.batch_size/GPU_num), shuffle=False,
-                num_workers=args.workers, pin_memory=True)
+                batch_size=int(args.MODEL.batch_size/GPU_num), shuffle=False,
+                num_workers=args.RUN.workers, pin_memory=True)
 
 
     # define loss function (criterion) and optimizer
-    if args.loss_type == 'nll':
+    if args.MODEL.loss_type == 'nll':
         criterion = torch.nn.CrossEntropyLoss().cuda()
     else:
         raise ValueError("Unknown loss type")
@@ -174,17 +182,17 @@ def main():
             group['name'], len(group['params']), group['lr_mult'], group['decay_mult'])))
 
     optimizer = torch.optim.SGD(policies,
-                                args.lr,
-                                momentum=args.momentum,
-                                weight_decay=args.weight_decay)
+                                args.OPT.lr,
+                                momentum=args.OPT.momentum,
+                                weight_decay=args.OPT.weight_decay)
 
-    if args.evaluate:
+    if args.RUN.evaluate:
         validate(val_loader, model, criterion, 0)
         return
     #writer = SummaryWriter(log_dir = '/workspace/mnt/group/video/kanghaidong/haidong/mixup-cifar10-master/logs')
 
-    for epoch in range(args.start_epoch, args.epochs):
-        adjust_learning_rate(optimizer, epoch, args.lr_steps)
+    for epoch in range(args.MODEL.start_epoch, args.MODEL.epochs):
+        adjust_learning_rate(optimizer, epoch, args.OPT.lr_steps)
 
         # train for one epoch
         #train_loss,train_top1,train_top5 = train(train_loader, model, criterion, optimizer, epoch)
@@ -194,7 +202,7 @@ def main():
         #writer.add_scalar('train_top5',train_top5,epoch)
 
         # evaluate on validation set
-        if (epoch + 1) % args.eval_freq == 0 or epoch == args.epochs - 1:
+        if (epoch + 1) % args.MC.eval_freq == 0 or epoch == args.MODEL.epochs - 1:
             prec1 = validate(val_loader, model, criterion, (epoch + 1) * len(train_loader))
         
 
@@ -204,7 +212,7 @@ def main():
             print('best_prec1',best_prec1)
             save_checkpoint({
                 'epoch': epoch + 1,
-                'arch': args.arch,
+                'arch': args.MODEL.arch,
                 'state_dict': model.state_dict(),
                 'best_prec1': best_prec1,
             }, is_best)
@@ -222,7 +230,7 @@ def train(train_loader, model, criterion, optimizer, epoch):
     top1 = AverageMeter()
     top5 = AverageMeter()
 
-    if args.use_partialbn:
+    if args.MODEL.use_partialbn:
         model.module.partialBN(True)
     else:
         model.module.partialBN(False)
@@ -237,7 +245,7 @@ def train(train_loader, model, criterion, optimizer, epoch):
 
         target = target.cuda()
 
-        input, target_a, target_b, lam = mixup_data(input, target, args.mixup)
+        input, target_a, target_b, lam = mixup_data(input, target, args.OPT.mixup)
         input_var, target_a_var, target_b_var = map(torch.autograd.Variable, (input,
                                                       target_a, target_b))
 
@@ -269,10 +277,10 @@ def train(train_loader, model, criterion, optimizer, epoch):
 
         loss.backward()
 
-        if args.clip_gradient is not None:
-            total_norm = clip_grad_norm(model.parameters(), args.clip_gradient)
-            if total_norm > args.clip_gradient:
-                print("clipping gradient: {} with coef {}".format(total_norm, args.clip_gradient / total_norm))
+        if args.OPT.clip_gradient is not None:
+            total_norm = clip_grad_norm(model.parameters(), args.OPT.clip_gradient)
+            if total_norm > args.OPT.clip_gradient:
+                print("clipping gradient: {} with coef {}".format(total_norm, args.OPT.clip_gradient / total_norm))
 
         optimizer.step()
 
@@ -280,7 +288,7 @@ def train(train_loader, model, criterion, optimizer, epoch):
         batch_time.update(time.time() - end)
         end = time.time()
 
-        if i % args.print_freq == 0:
+        if i % args.MC.print_freq == 0:
             print(('Epoch: [{0}][{1}/{2}], lr: {lr:.5f}\t'
                   'Time {batch_time.val:.3f} ({batch_time.avg:.3f})\t'
                   'Data {data_time.val:.3f} ({data_time.avg:.3f})\t'
@@ -322,7 +330,7 @@ def validate(val_loader, model, criterion, iter, logger=None):
         batch_time.update(time.time() - end)
         end = time.time()
 
-        if i % args.print_freq == 0:
+        if i % args.MC.print_freq == 0:
             print(('Test: [{0}/{1}]\t'
                   'Time {batch_time.val:.3f} ({batch_time.avg:.3f})\t'
                   'Loss {loss.val:.4f} ({loss.avg:.4f})\t'
@@ -338,10 +346,10 @@ def validate(val_loader, model, criterion, iter, logger=None):
 
 
 def save_checkpoint(state, is_best, filename='checkpoint.pth.tar'):
-    filename = '_'.join((args.snapshot_pref, args.modality.lower(), filename))
+    filename = '_'.join((args.RUN.snapshot_pref, args.DATA.modality.lower(), filename))
     torch.save(state, filename)
     if is_best:
-        best_name = '_'.join((args.snapshot_pref, args.modality.lower(), 'model_best.pth.tar'))
+        best_name = '_'.join((args.RUN.snapshot_pref, args.DATA.modality.lower(), 'model_best.pth.tar'))
         shutil.copyfile(filename, best_name)
 
 
@@ -366,8 +374,8 @@ class AverageMeter(object):
 def adjust_learning_rate(optimizer, epoch, lr_steps):
     """Sets the learning rate to the initial LR decayed by 10 every 30 epochs"""
     decay = 0.1 ** (sum(epoch >= np.array(lr_steps)))
-    lr = args.lr * decay
-    decay = args.weight_decay
+    lr = args.OPT.lr * decay
+    decay = args.OPT.weight_decay
     for param_group in optimizer.param_groups:
         param_group['lr'] = lr * param_group['lr_mult']
         param_group['weight_decay'] = decay * param_group['decay_mult']

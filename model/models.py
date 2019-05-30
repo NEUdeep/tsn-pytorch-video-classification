@@ -1,9 +1,9 @@
 import torch
 from torch import nn
-from ops.basic_ops import ConsensusModule, Identity
-from transforms import *
+from model.consensus_ops import ConsensusModule, Identity
+from transforms.transforms import *
 from torch.nn.init import normal, constant
-from my_model.group_norm import GroupNorm2d
+from transforms.group_norm import GroupNorm2d
 
 class TSN(nn.Module):
     def __init__(self, num_class, num_segments, modality,
