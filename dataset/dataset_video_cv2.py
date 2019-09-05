@@ -3,7 +3,7 @@ from PIL import Image
 import numpy as np
 import cv2
 from numpy.random import randint
-from dataset.dataset import TSNDataSet, VideoRecord
+from dataset import TSNDataSet, VideoRecord
 
 
 class TSNDataSetVideoCV2(TSNDataSet):
@@ -55,6 +55,7 @@ class TSNDataSetVideoCV2(TSNDataSet):
         else:
             offsets = np.zeros((self.num_segments,))
         return offsets
+    
 
     def _get_test_indices(self, num_frames):
 
@@ -63,12 +64,18 @@ class TSNDataSetVideoCV2(TSNDataSet):
         offsets = np.array([int(tick / 2.0 + tick * x) for x in range(self.num_segments)])
 
         return offsets
+    
+    def _get_per_frame_test(self,num_frames): # 生成一个list，含一个video的所有帧。
+        offsets = np.array([int(x) for x in range(num_frames-1)])
+        return offsets
+    
 
     def __getitem__(self, index):# get one video and label of index; but it have some problem with random police in training 
         record = self.video_list[index]
         videoObj = cv2.VideoCapture(record.path)
         try:
             num_frames = int(videoObj.get(cv2.CAP_PROP_FRAME_COUNT))
+            print('num of frame is :',num_frames)
         except:
             num_frames = 0
         if num_frames == 0:
@@ -79,7 +86,9 @@ class TSNDataSetVideoCV2(TSNDataSet):
                 segment_indices = self._sample_indices(num_frames) if self.random_shift \
                     else self._get_val_indices(num_frames)
             else:
-                segment_indices = self._get_test_indices(num_frames)
+                segment_indices = self._get_per_frame_test(num_frames) #产生一个video的所有的frame的index的一个list。
+                print('test_mode')
+                print(segment_indices)
 
             process_data = self.cv2_get(videoObj, segment_indices)
             label = record.label#label of video from video_list
@@ -88,7 +97,7 @@ class TSNDataSetVideoCV2(TSNDataSet):
             videoObj.release()
 
         while process_data is None:
-            index = randint(0, len(self.video_list) - 1)
+            index = randint(0, len(self.video_list))
             #you should know index is random,but con't over len(self.video_list);if over,will get error:out of range 
             process_data, label = self.__getitem__(index)
         #print (label)#len(label)=42653>len(video_list)
@@ -100,6 +109,7 @@ class TSNDataSetVideoCV2(TSNDataSet):
 
         images = list()
         for frame_index in indices:
+            print('frame_index',frame_index)
             videoObj.set(cv2.CAP_PROP_POS_FRAMES, frame_index)
             _, cv2_im = videoObj.read()
             if cv2_im is None:
@@ -107,12 +117,16 @@ class TSNDataSetVideoCV2(TSNDataSet):
             cv2_im = cv2.cvtColor(cv2_im, cv2.COLOR_BGR2RGB)
             pil_im = Image.fromarray(cv2_im)
             images.append(pil_im)
+        print(images)
 
         process_data = self.transform(images)
+        print(process_data)
         return process_data
 
 
     def __len__(self):
         return len(self.video_list)
+
+
 
 

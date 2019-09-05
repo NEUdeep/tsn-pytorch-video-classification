@@ -35,9 +35,59 @@ class GroupRandomCrop(object):
         return out_images
 
 
+#define a new fix transfroms for monitor video Fighting testing. it boosted acc from 1% to 90% for actual monitor video in lingang.
+#by Kang Haidong
+class GroupfixCropandCenterCrop(object):
+    def __init__(self,size):
+        if isinstance(size,numbers.Number):
+            self.size = (int(size),int(size))
+        else:
+            self.size = size
+    def __call__(self,img_group):
+        w,h = img_group[0].size
+        y1 = h
+        x1 = w*3/4
+        th,tw = self.size
+        out_images = list()
+        from torchvision import transforms
+        for img in img_group:
+            assert(img.size[0] == w and img.size[1] == h)
+            img1 = img.crop((0,0,x1,y1))
+            crop = transforms.CenterCrop(self.size)
+            out_images.append(crop(img1)) #size is crop_size is 224*224
+
+        return out_images
+
+
+#define a new dynamic transfroms for monitor video Fighting testing.
+#by Kang Haidong
+class GroupDynamicCropandCenterCrop(object):
+    def __init__(self,size):
+        if isinstance(size,numbers.number):
+            self.size = (int(size),int(size))
+        else:
+            self.size = size 
+
+    def __call__(self,img_group):
+        w,h = img_group[0].size 
+        zx = w*3/4
+        zy = h*4/3
+        y1 = random.randint(0,zy-h)
+        x1 = random.randint(0,w-zx)
+        out_images = list()
+        from torchvision import transforms
+        for img in img_group:
+            assert(img.size[0] == w and img.size[1] == h)
+            img1 = img.crop((x1,y1,x1+zx,y1+zy))
+            crop = transforms.CenterCrop(self.size)
+            out_images.append(crop(img1))
+
+        return out_images
+
+
 class GroupCenterCrop(object):
     def __init__(self, size):
-        self.worker = torchvision.transforms.CenterCrop(size)
+        self.worker = torchvision.transforms.CenterCrop(size) #scale_size ；是一个方阵.
 
     def __call__(self, img_group):
         return [self.worker(img) for img in img_group]
@@ -140,7 +190,7 @@ class GroupScale(object):
         return [self.worker(img) for img in img_group]
 
 
-class GroupOverSample(object):
+class GroupOverSample(object): # 5张crop，5张crop加翻转）,corner crop，而且是4个corner和1个center
     def __init__(self, crop_size, scale_size=None):
         """
         :param crop_size: crop image to 224(e.g.)
@@ -180,7 +230,9 @@ class GroupOverSample(object):
             oversample_group.extend(normal_group)
             oversample_group.extend(flip_group)
         return oversample_group
-
+"""
+首先__init__中的GroupScale类也是在transforms.py中定义的，其实是对输入的n张图像都做torchvision.transforms.Scale操作，也就是resize到指定尺寸。GroupMultiScaleCrop.fill_fix_offset返回的offsets是一个长度为5的列表，每个值都是一个tuple，其中前4个是四个点坐标，最后一个是中心点坐标，目的是以这5个点为左上角坐标时可以在原图的四个角和中心部分crop出指定尺寸的图，后面有例子介绍。crop = img.crop((o_w, o_h, o_w + crop_w, o_h + crop_h))是按照crop_w*crop_h的大小去crop原图像，这里采用的是224*224。flip_crop = crop.copy().transpose(Image.FLIP_LEFT_RIGHT)是对crop得到的图像做左右翻转。最后把未翻转的和翻转后的列表合并，这样一张输入图像就可以得到10张输出了（5张crop，5张crop加翻转）。举个例子，假设image_w=340，image_h=256，crop_w=224，crop_h=224，那么offsets就是[(0,0),(116,0),(0,32),(116,32),(58,16)]，因此第一个crop的结果就是原图上左上角坐标为(0,0)，右下角坐标为(224,224)的图，这也就是原图的左上角部分图；第二个crop的结果就是原图上左上角坐标为(116,0)，右下角坐标为(340,224)的图，这也就是原图的右上角部分图，其他依次类推分别是原图的左下角部分图和右下角部分图，最后一个是原图正中央crop出来的224*224图。这就是论文中说的corner crop，而且是4个corner和1个center。
+"""
 class GroupRandomResizeCrop(object):
     """
     random resize image to shorter size = [256,320] (e.g.),
