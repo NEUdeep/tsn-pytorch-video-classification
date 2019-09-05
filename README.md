@@ -64,6 +64,13 @@ bash ./script/V1.0_rgb_diff_train.sh
 bash ./script/V1.0_rgb_test.sh
 ```
 
+### New
+增加了专门针对监控视频的异常行为识别的模块；
+本模块对输入的transfrom逻辑进行了仔细分析，然后提出两种新的专门针对视频识别的tranform，在不改变模型结构的条件下，将实际监控视频的acc从1%提升至90%。
+本方法也适合于一般的2D图像变换。方法还在不断优化当中。
+增加了新的逐帧测试的模块；
+
+
 ### Reference
 
 [1] https://github.com/yjxiong/tsn-pytorch
